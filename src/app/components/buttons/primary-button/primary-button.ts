@@ -11,15 +11,16 @@ import { Component, input } from '@angular/core';
       position: relative;
       height: 100%;
       width: 100%;
-      padding: 10px 20px;
+      padding: 1.7vh 1vw;
+      cursor: pointer;
       &::after {
           content: '';
           width: 0;
           height: 3px;
           position: absolute;
           background: black;
-          top: 3.5vh;
-          left: 1.3vw;
+          top: 4.2vh;
+          left: 1vw;
           transition: 0.5s;
       }
       &:hover::after {

@@ -12,7 +12,8 @@ import { Component } from '@angular/core';
     button {
       height: 100%;
       width: 100%;
-      padding: 10px 5px;
+      padding: 1.3vh 0.3vw;
+      cursor: pointer;
     }
   `,
 })

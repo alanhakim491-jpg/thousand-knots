@@ -2,17 +2,19 @@ import { Component } from '@angular/core';
 import { PrimaryButton } from "../buttons/primary-button/primary-button";
 import { ShovableBtn } from '../buttons/shovable-btn/shovable-btn';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-header',
-  imports: [PrimaryButton, ShovableBtn, MatIconModule],
+  imports: [PrimaryButton, ShovableBtn, MatIconModule, RouterLink],
   template: `
     <div id="header" class="bg-[#f0f0f0] rounded-lg flex flex-row items-center justify-between">
-      <img src="https://thethousandknot.com/cdn/shop/files/TheThousandKnot-logo_110x@2x.png?v=1648111716" alt="TK-Logo"/>
+      <img routerLink='/' src="../../assets/tk-logo-removebg-preview.png" alt="TK-Logo"/>
       <div class="by-btns flex flex-row items-center">
         <ul class="primary-btnList">
           <app-primary-button label='Catalog' />
           <app-primary-button label='Contact' />
+          <app-primary-button label='Profile' />        
         </ul>
         <ul class="shovable-btnList">
         <app-shovable-btn><mat-icon>search</mat-icon></app-shovable-btn>
