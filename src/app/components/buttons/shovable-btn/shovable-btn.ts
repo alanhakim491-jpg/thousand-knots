@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 
 @Component({
   selector: 'app-shovable-btn',
   imports: [],
   template: `
-    <button>
+    <button (click)=btnClick.emit()>
       <ng-content></ng-content>
     </button>
   `,
@@ -18,5 +18,5 @@ import { Component } from '@angular/core';
   `,
 })
 export class ShovableBtn {
-
+  btnClick = output();
 }

@@ -25,7 +25,7 @@ import { Component, input } from '@angular/core';
       }
       &:hover::after {
             width: 40%;
-          } 
+      } 
     }
   `,
 })
