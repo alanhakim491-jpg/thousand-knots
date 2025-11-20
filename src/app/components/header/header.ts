@@ -14,7 +14,7 @@ import { RouterLink } from "@angular/router";
         <ul class="primary-btnList">
           <app-primary-button label='Catalog' />
           <app-primary-button label='Contact' />
-          <app-primary-button label='Profile' />        
+          <app-primary-button label='Profile' routerLink="/login"/>        
         </ul>
         @if (!showSearch) {
           <ul class="shovable-btnList" #shovableRef>
@@ -31,7 +31,7 @@ import { RouterLink } from "@angular/router";
         }
         @if (showSearch) {
           <div id="search-bar" class="flex flex-row items-center h-[2rem]">
-            <input type='text' class="h-[100%] w-[80%] border-black border-2 rounded-lg text-lg" />
+            <input type='search' placeholder="search" class="h-[100%] w-[80%] border-black border-2 rounded-lg text-lg" />
             <app-shovable-btn (btnClick)='closeHandler()' class="hover:cursor-pointer hover:opacity-50 ease-in-out">
               <mat-icon>close</mat-icon>
             </app-shovable-btn>

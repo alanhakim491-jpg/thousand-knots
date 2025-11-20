@@ -12,23 +12,26 @@
         margin: auto 2vw;
         cursor: pointer;
     }
+    h2 {
+        font-size: 2rem;
+    }
     .primary-btnList {
         font-size: 1.1rem;
         display: flex;
         flex-direction: row;
         margin: auto 0.3vw;
         &:hover {
-            @include mixins.neumorphism;
+            @include mixins.neumorphism-inset;
         }
     }
     .shovable-btnList {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        width: 8rem;
+        width: 9rem;
         margin: auto 2vw;
-        &:hover {
-            @include mixins.neumorphism;
+        mat-icon {
+            transition: opacity 0.2s ease-in-out;
         }
         mat-icon:hover {
             opacity: 0.5;
