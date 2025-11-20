@@ -1,6 +1,11 @@
-@mixin neumorphism {
+@mixin neumorphism-inset {
     background: #f0f0f0; /* Light gray or your base color */
     border-radius: 7px;
     box-shadow: inset 3px 3px 12px #bebebe, inset -3px -3px 12px #ffffff;
     transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+@mixin neumorphism {
+    border-radius: 7px;
+    box-shadow: -10px 10px 20px 5px rgba(255, 255, 255, 0.04), 10px -10px 20px 5px rgba(0, 0, 0, 0.08);
 }
