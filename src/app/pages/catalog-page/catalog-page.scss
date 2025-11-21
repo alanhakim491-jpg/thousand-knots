@@ -1,0 +1,45 @@
+@use '../../styles/mixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Meie+Script&display=swap');
+
+h1 {
+    font-family: 'Meie Script', cursive;
+    font-size: 4rem;
+    text-align: center;
+    width: 79vw;
+    margin: 0 10vw;
+    margin-top: 10vh;
+    padding: 6vh 0;
+    border-radius: 7px;
+    @include mixins.glassmorphic-latte;
+}
+.catalog {
+    margin: -1vh 10vw;
+    padding: 7vh 0;
+    padding-bottom: 13vh;
+    display: grid;
+    position: relative;
+    z-index: 111;
+    grid-template-columns: 16vw 16vw 16vw 16vw;
+    gap: 2vh 2vw;
+    justify-content: center;
+    border-radius: 7px;
+    @include mixins.neumorphism;
+    background: url('/assets/floral-bcg.png');
+    @media screen and (max-width: 500px) {
+        grid-template-columns: 30vw 30vw;
+    }
+    .navigate {
+        display: flex;
+        gap: 2vw;
+        position: absolute;
+        top: 96%;
+        left: 38%;
+        li {
+            cursor: pointer;
+            font-size: 1rem;
+            &:hover {
+                text-decoration: underline 1.5px;
+            }
+        }
+    }
+}

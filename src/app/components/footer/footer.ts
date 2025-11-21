@@ -8,7 +8,8 @@ import { Component,signal } from '@angular/core';
   `,
   styles: `
     div {
-      margin: 0 auto;
+      margin: 7vh auto;
+      padding-bottom: 1vh;
       font-family: 'Roboto Condensed', sans-serif;
     }
   `,

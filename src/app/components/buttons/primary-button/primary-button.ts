@@ -10,8 +10,13 @@ import { Component, input } from '@angular/core';
     .prm-btn {
       position: relative;
       height: 100%;
+      text-align: center;
       width: 100%;
-      padding: 1.7vh 1vw;
+      padding: 1.5vh 1.2vw;
+      border-radius: 30px;
+      @media screen and (min-width: 1600px) {
+            font-size: 1.3rem;
+      }
       cursor: pointer;
       &::after {
           content: '';
@@ -19,9 +24,13 @@ import { Component, input } from '@angular/core';
           height: 3px;
           position: absolute;
           background: black;
-          top: 4.2vh;
-          left: 1vw;
+          top: 4vh;
+          left: 1.2vw;
+          border-radius: 20px;
           transition: 0.5s;
+          @media screen and (min-width: 1600px) {
+            top: 3.3vh;
+          }
       }
       &:hover::after {
             width: 40%;
