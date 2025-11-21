@@ -1,3 +1,4 @@
+@use '../../styles/mixins.scss' as mixins;
 @import url('https://fonts.googleapis.com/css2?family=Meie+Script&display=swap');
 
 .display {
@@ -10,19 +11,22 @@
     .display_l {
         width: 67%;
         background: url('/assets/floral-bcg.png') no-repeat center/cover;
-        display: flex;
-        flex-direction: column;
+        @include mixins.flex-col_center;
         justify-content: center;
-        align-items: center;
         gap: 15vh;
+        @media screen and (min-width: 1600px) {
+            width: 71%;
+        }
         h1 {
-            font-size: 4.2rem;
+            font-size: 5rem;
             font-family: "Meie Script", cursive;
+            @media screen and (min-width: 1600px) {
+                font-size: 7rem;
+            }
         }
         .the-buttons {
             width: 60%;
-            display: flex;
-            flex-direction: column;
+            @include mixins.flex-col_center;
             justify-content: center;
             align-content: center;
             gap: 3vh;
