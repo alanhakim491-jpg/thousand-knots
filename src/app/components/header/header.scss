@@ -17,17 +17,18 @@
     }
     .primary-btnList {
         font-size: 1.1rem;
-        display: flex;
-        flex-direction: row;
+        @include mixins.row-justify_center;
+        align-items: center;
+        height: 100%;
         margin: auto 0.3vw;
+        transition: 0.3s;
         &:hover {
+            border-radius: 30px;
             @include mixins.neumorphism-inset;
         }
     }
     .shovable-btnList {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        @include mixins.row-justify_center;
         width: 9rem;
         margin: auto 2vw;
         mat-icon {
@@ -36,5 +37,11 @@
         mat-icon:hover {
             opacity: 0.5;
         }
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    mat-icon {
+        font-size: 1.6rem;
     }
 }

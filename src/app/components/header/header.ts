@@ -8,13 +8,13 @@ import { RouterLink } from "@angular/router";
   selector: 'app-header',
   imports: [PrimaryButton, ShovableBtn, MatIconModule, RouterLink],
   template: `
-    <div id="header" class="bg-[#f0f0f0] rounded-lg flex flex-row items-center justify-between">
+    <div id="header" class="bg-[#f5f5f4] rounded-lg flex flex-row items-center justify-between">
       <img routerLink='/' src="../../assets/tk-logo-removebg-preview.png" alt="TK-Logo"/>
       <div class="by-btns flex flex-row items-center">
         <ul class="primary-btnList">
-          <app-primary-button label='Catalog' />
-          <app-primary-button label='Contact' />
-          <app-primary-button label='Profile' routerLink="/login"/>        
+          <app-primary-button label='Catalog' routerLink="/catalog" />
+          <app-primary-button label='Contact' routerLink="/contact" />
+          <app-primary-button label='Profile' routerLink="/login" />        
         </ul>
         @if (!showSearch) {
           <ul class="shovable-btnList" #shovableRef>
