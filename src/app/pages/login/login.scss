@@ -1,0 +1,45 @@
+@use '../../styles/mixins.scss' as mixins;
+
+form {
+    @include mixins.neumorphism;
+    background-color: #f5f6f5;
+    @include mixins.flex-col_center;
+    height: 40%;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.login-params {
+    font-family: 'Roboto Condensed', sans-serif;
+    @include mixins.flex-col_center;
+    gap: 2vh;
+    padding: 1.2vh 0;
+    .email {
+        @include mixins.flex-col;
+    }
+    .pass {
+        @include mixins.flex-col
+    }
+    @media screen and (min-width: 1600px) {
+        margin: 2.5vh auto;
+    }
+}
+
+h1 {
+    font-family: 'Meie Script', cursive;
+    font-size: 5rem;
+    text-align: center;
+    margin: 0;
+    padding: 13vh 0;
+    @media screen and (min-width: 1600px) {
+        font-size: 6.5rem;
+    }
+}
+#signup-phrase {
+    margin: 3px auto;
+    text-align: center;
+    a {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
