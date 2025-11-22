@@ -11,6 +11,9 @@
         height: 80%;
         margin: auto 2vw;
         cursor: pointer;
+        @media screen and (max-width: 500px) {
+            width: 40%;
+        }
     }
     h2 {
         font-size: 2rem;
@@ -22,6 +25,9 @@
         height: 100%;
         margin: auto 0.3vw;
         transition: 0.3s;
+        @media screen and (max-width: 500px) {
+            display: none;
+        }
         &:hover {
             border-radius: 30px;
             @include mixins.neumorphism-inset;
