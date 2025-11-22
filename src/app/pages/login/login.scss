@@ -1,8 +1,6 @@
 @use '../../styles/mixins.scss' as mixins;
 
 form {
-    @include mixins.neumorphism;
-    background-color: #f5f6f5;
     @include mixins.flex-col_center;
     height: 40%;
     width: 60%;
@@ -14,6 +12,13 @@ form {
     @include mixins.flex-col_center;
     gap: 2vh;
     padding: 1.2vh 0;
+    input {
+        padding: 0 0.5vw;
+        transition: border 0.3s ease-in-out;
+        &:hover {
+            border: 2px solid black;
+        }
+    }
     .email {
         @include mixins.flex-col;
     }
