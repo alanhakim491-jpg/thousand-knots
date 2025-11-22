@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { ContentButton } from "../buttons/content-button/content-button";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home-content',
-  imports: [ContentButton],
+  imports: [ContentButton, RouterLink],
   template: `
     <div class="display">
       <div class="display_l">
         <h1>Discover</h1>
         <div class="the-buttons">
-          <app-content-button label='Shop Now' />
-          <app-content-button label='Whats New' />
+          <app-content-button label='Shop Now' routerLink="/catalog" />
+          <app-content-button label='New Collection' />
         </div>
       </div>
       <div class="display_r">
