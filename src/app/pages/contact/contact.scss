@@ -1,0 +1,54 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.contact-us {
+    h1 {
+        font-family: 'Meie Script', cursive;
+        font-size: 4.5rem;
+        text-align: center;
+        margin: 0;
+        padding: 13vh 0 5vh 0;
+        @media screen and (min-width: 1600px) {
+            font-size: 6.5rem;
+        }
+        @media screen and (max-width: 500px) {
+            font-size: 3rem;
+        }
+    }
+    form {
+        margin: 6vh auto;
+        padding: 2vh 0;
+        width: 60%;
+        height: 35vh;
+        @include mixins.flex-col_center;
+        align-content: center;
+        gap: 2vh;
+        font-size: 1rem;
+        .top-row {
+            display: flex;
+            flex-direction: row;
+            gap: 2vw;
+            input {
+                width: 18vw;
+                height: 5vh;
+                padding: 0 1vw;
+                border: 1px solid black;
+            }
+        }
+        input, textarea {
+            border: 1px solid black
+        }
+        input[type=email] {
+            width: 97%;
+            height: 35vh;
+            padding: 0 1vw;
+        }
+        textarea {
+            padding: 1vh 1vw;
+        }
+        input[type=submit] {
+            background-color: #ffe4e6;
+            padding: 1.3vh 1.5vw;
+            margin-right: 31.5vw;
+        }
+    }
+}
