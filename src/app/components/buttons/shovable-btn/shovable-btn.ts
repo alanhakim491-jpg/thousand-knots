@@ -10,9 +10,9 @@ import { Component, output } from '@angular/core';
   `,
   styles: `
     button {
-      height: 100%;
-      width: 100%;
-      padding: 1.3vh 0.3vw;
+      height: 2vh;
+      width: 2vw;
+      padding: 0.3vh 0.3vw;
       cursor: pointer;
     }
   `,
