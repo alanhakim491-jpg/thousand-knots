@@ -1,7 +1,7 @@
 @use '../../styles/mixins.scss';
 
 .catalog-card {
-    height: 47vh;
+    height: 49vh;
     width: 15vw;
     margin: 1.2vh auto;
     padding: 0.8rem 1.3rem;
@@ -10,6 +10,14 @@
     @include mixins.glassmorphic-arctic;
     @media screen and (max-width: 500px) {
         width: 30vw;
+    }
+    .props {
+        h2 {
+            text-decoration: underline;
+        }
+        p {
+            font-size: 1rem;
+        }
     }
     .stock {
         padding-bottom: 1vh;

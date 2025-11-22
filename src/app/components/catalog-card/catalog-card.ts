@@ -1,10 +1,11 @@
 import { Component, inject, Input } from '@angular/core';
 import { Catalog } from '../../services/catalog';
 import { Catalogs } from '../../models/catalog.types';
+import { CartButton } from '../buttons/cart-button/cart-button';
 
 @Component({
   selector: 'app-catalog-card',
-  imports: [],
+  imports: [CartButton],
   template: `
     <div class="catalog-card">
       <div class="stock">
@@ -20,9 +21,12 @@ import { Catalogs } from '../../models/catalog.types';
           <p>{{ product.description }}</p>
         </div>
       </div>
-      <div class="props flex flex-col justify-between gap-1">
+      <div class="props flex flex-col justify-between gap-2">
         <h2>{{ product.title }}</h2>
-        <p>{{ '$' + product.price  }}</p>
+        <div class="the-bottom flex flex-row justify-between items-center">
+          <p>{{ '$' + product.price  }}</p>
+          <app-cart-button label='Cart'/>
+        </div>
       <div>
     </div>
   `,
