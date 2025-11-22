@@ -14,6 +14,7 @@ import { Component, input, output } from '@angular/core';
       border-radius: 7px;
       box-shadow: -10px 10px 20px 5px rgba(255, 255, 255, 0.04), 10px -10px 20px 5px rgba(0, 0, 0, 0.08);
       transition: 0.3s ease;
+      cursor: pointer;
       &:hover {
         scale: 1.1;
       }
