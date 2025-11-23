@@ -14,7 +14,6 @@ describe('CatalogCard', () => {
 
     fixture = TestBed.createComponent(CatalogCard);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {

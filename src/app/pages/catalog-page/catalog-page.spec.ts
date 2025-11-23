@@ -14,7 +14,6 @@ describe('CatalogPage', () => {
 
     fixture = TestBed.createComponent(CatalogPage);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {

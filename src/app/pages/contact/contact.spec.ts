@@ -14,7 +14,6 @@ describe('Contact', () => {
 
     fixture = TestBed.createComponent(Contact);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {

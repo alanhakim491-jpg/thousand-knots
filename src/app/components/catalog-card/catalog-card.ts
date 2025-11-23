@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, Input, signal } from '@angular/core';
 import { Catalog } from '../../services/catalog';
 import { Catalogs } from '../../models/catalog.types';
 import { CartButton } from '../buttons/cart-button/cart-button';
@@ -19,7 +19,7 @@ import { ShovableBtn } from "../buttons/shovable-btn/shovable-btn";
           }
         </div>
         <app-shovable-btn (btnClick)="markHandler()">
-          <mat-icon>{{ bookmarkIcon }}</mat-icon>
+          <mat-icon>{{ bookmarkIcon() }}</mat-icon>
         </app-shovable-btn>
       </div>
       <div class="the-image">
@@ -44,9 +44,11 @@ export class CatalogCard {
 
   @Input() product!: Catalogs;
 
-  bookmarkIcon = 'bookmark_border';
+  bookmarkIcon = signal('bookmark_border');
 
   markHandler() {
-    this.bookmarkIcon = this.bookmarkIcon === 'bookmark_border' ? 'bookmark' : 'bookmark_border';
+    this.bookmarkIcon.set(
+      this.bookmarkIcon() === 'bookmark_border' ? 'bookmark' : 'bookmark_border'
+    );
   }
 }

@@ -14,7 +14,6 @@ describe('Login', () => {
 
     fixture = TestBed.createComponent(Login);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { PrimaryButton } from "../buttons/primary-button/primary-button";
 import { ShovableBtn } from '../buttons/shovable-btn/shovable-btn';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,7 +16,7 @@ import { RouterLink } from "@angular/router";
           <app-primary-button label='Contact' routerLink="/contact" />
           <app-primary-button label='Profile' routerLink="/login" />        
         </ul>
-        @if (!showSearch) {
+        @if (!showSearch()) {
           <ul class="shovable-btnList" #shovableRef>
             <app-shovable-btn (btnClick)='clickHandler()'>
               <mat-icon #searchRef>search</mat-icon>
@@ -32,7 +32,7 @@ import { RouterLink } from "@angular/router";
             </app-shovable-btn>
           </ul>
         }
-        @if (showSearch) {
+        @if (showSearch()) {
           <div id="search-bar" class="flex flex-row items-center h-[2rem]">
             <input type='search' placeholder="search" class="h-[100%] w-[80%] border-black border-2 rounded-lg text-lg px-2" />
             <app-shovable-btn (btnClick)='closeHandler()' class="hover:cursor-pointer hover:opacity-50 ease-in-out">
@@ -47,14 +47,14 @@ import { RouterLink } from "@angular/router";
 })
 export class Header {
 
-  showSearch = false;
+  showSearch = signal(false);
 
   clickHandler() {
-    this.showSearch = true;
+    this.showSearch.set(true);
   }
 
   closeHandler() {
-    this.showSearch = false;
+    this.showSearch.set(false);
   }
 
 }

@@ -14,7 +14,6 @@ describe('ShovableBtn', () => {
 
     fixture = TestBed.createComponent(ShovableBtn);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
