@@ -1,4 +1,4 @@
-import { Component, inject, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Catalog } from '../../services/catalog';
 import { Catalogs } from '../../models/catalog.types';
 import { CartButton } from '../buttons/cart-button/cart-button';
