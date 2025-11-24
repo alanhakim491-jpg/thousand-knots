@@ -1,13 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { CatalogCard } from '../../components/catalog-card/catalog-card';
+import { CcContent } from 'src/app/components/cc-content/cc-content';
 import { Catalog } from '../../services/catalog';
 
 @Component({
   selector: 'app-catalog-page',
-  imports: [CatalogCard],
+  imports: [CatalogCard, CcContent],
   template: `
     <h1>Explore</h1>
-    <div class="catalog">
+    <app-cc-content>
       @for (p of products(); track p.id ) {
         <app-catalog-card [product]='p' />
       }
@@ -21,7 +22,7 @@ import { Catalog } from '../../services/catalog';
         <li>10</li>
         <li>Next</li>
       </ul>
-    </div>
+    </app-cc-content>
   `,
   styleUrls: ['./catalog-page.scss'],
 })
