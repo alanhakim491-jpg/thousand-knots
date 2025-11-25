@@ -4,6 +4,7 @@ form {
     @include mixins.flex-col_center;
     height: 40%;
     width: 60%;
+    padding-bottom: 1.2vh;
     margin: 0 auto;
 }
 
@@ -35,7 +36,7 @@ h1 {
     font-size: 5rem;
     text-align: center;
     margin: 0;
-    padding: 13vh 0;
+    padding: 10vh 0;
     @media screen and (min-width: 1600px) {
         font-size: 6.5rem;
     }

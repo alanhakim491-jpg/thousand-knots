@@ -1,21 +1,6 @@
 @use '../../styles/mixins.scss';
 @import url('https://fonts.googleapis.com/css2?family=Meie+Script&display=swap');
 
-h1 {
-    font-family: 'Meie Script', cursive;
-    font-size: 4rem;
-    text-align: center;
-    width: 79vw;
-    margin: 0 10vw;
-    margin-top: 10vh;
-    padding: 6vh 0;
-    border-radius: 7px;
-    @include mixins.glassmorphic-latte;
-    @media screen and (max-width: 500px) {
-        width: 77vw;
-    }
-}
-
 .navigate {
     display: flex;
     gap: 2vw;

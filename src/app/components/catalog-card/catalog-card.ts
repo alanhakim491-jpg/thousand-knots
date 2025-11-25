@@ -1,5 +1,6 @@
 import { Component, inject, Input, signal } from '@angular/core';
 import { Catalog } from '../../services/catalog';
+import { Cart } from '../../services/cart';
 import { Catalogs } from '../../models/catalog.types';
 import { CartButton } from '../buttons/cart-button/cart-button';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,7 +12,7 @@ import { ShovableBtn } from "../buttons/shovable-btn/shovable-btn";
   template: `
     <div class="catalog-card">
       <div class="the-top">
-        <div class="stock">
+        <div class="stock" [class]="product.sku ? 'text-black' : 'text-rose-400'">
           @if (product.sku) {
             {{ product.sku }} left
           } @else {
@@ -32,7 +33,7 @@ import { ShovableBtn } from "../buttons/shovable-btn/shovable-btn";
         <h2>{{ product.title }}</h2>
         <div class="the-bottom flex flex-row justify-between items-center">
           <p>{{ '$' + product.price  }}</p>
-          <app-cart-button label='Cart'/>
+          <app-cart-button label='Cart' (btnClicked)="cartService.addToCart(product)" />
         </div>
       <div>
     </div>
@@ -41,6 +42,7 @@ import { ShovableBtn } from "../buttons/shovable-btn/shovable-btn";
 })
 export class CatalogCard {
   catalogService = inject(Catalog);
+  cartService = inject(Cart);
 
   @Input() product!: Catalogs;
 

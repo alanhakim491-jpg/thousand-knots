@@ -1,13 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { CatalogCard } from '../../components/catalog-card/catalog-card';
 import { CcContent } from 'src/app/components/cc-content/cc-content';
+import { CcHeader } from 'src/app/components/cc-header/cc-header';
 import { Catalog } from '../../services/catalog';
 
 @Component({
   selector: 'app-catalog-page',
-  imports: [CatalogCard, CcContent],
+  imports: [CatalogCard, CcContent, CcHeader],
   template: `
-    <h1>Explore</h1>
+    <app-cc-header [header]="'Explore'" />
     <app-cc-content>
       @for (p of products(); track p.id ) {
         <app-catalog-card [product]='p' />

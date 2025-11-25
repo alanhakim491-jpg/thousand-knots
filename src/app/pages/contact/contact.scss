@@ -5,24 +5,28 @@
         font-family: 'Meie Script', cursive;
         font-size: 4.5rem;
         text-align: center;
-        margin: 0;
-        padding: 13vh 0 5vh 0;
+        margin: 0 auto;
+        padding: 10vh 0 7vh 0;
         @media screen and (min-width: 1600px) {
             font-size: 6.5rem;
         }
         @media screen and (max-width: 500px) {
             font-size: 3rem;
+            margin-top: 8vh;
         }
     }
     form {
         margin: 6vh auto;
-        padding: 2vh 0;
+        padding: 0.5vh 0;
         width: 60%;
         height: 35vh;
         @include mixins.flex-col_center;
         align-content: center;
         gap: 2vh;
         font-size: 1rem;
+        @media screen and (max-width: 500px) {
+            margin: 3vh auto;
+        }
         .top-row {
             display: flex;
             flex-direction: row;
@@ -39,16 +43,31 @@
         }
         input[type=email] {
             width: 97%;
-            height: 35vh;
+            height: 30vh;
             padding: 0 1vw;
         }
         textarea {
             padding: 1vh 1vw;
+            width: 97%;
+            height: 55vh;
+            position: relative;
         }
         input[type=submit] {
             background-color: #ffe4e6;
             padding: 1.3vh 1.5vw;
-            margin-right: 31.5vw;
+            transition: background-color 0.3s ease-in-out;
+            align-self: flex-start;
+            margin-left: 0.55vw;
+            &:hover {
+                background-color: #fda4af;
+            }
+        } 
+        .char-count {
+            padding: 1vh 2vw;
+            position: absolute;
+            bottom: 17vh;
+            left: 63.4vw;
+            font-size: 0.9rem;
         }
     }
 }

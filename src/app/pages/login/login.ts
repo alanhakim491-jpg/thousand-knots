@@ -14,16 +14,16 @@ import { LsButton } from "../../components/ls-button/ls-button";
         <div class="login-params">
           <div class="email">
             <h2 class="text-left">Email</h2>
-            <input type="email" class="border-black border-1 rounded-lg h-9 w-[24vw] text-[1.2rem]"/>
+            <input type="email" required autofocus class="border-black border-1 rounded-lg h-9 w-[24vw] text-[1.2rem]"/>
           </div>
           <div class="pass">
             <h2 class="text-left">Password</h2>
-            <input type="password" class="border-black border-1 rounded-lg h-9 w-[24vw] text-[1.2rem]" />
+            <input type="password" required class="border-black border-1 rounded-lg h-9 w-[24vw] text-[1.2rem]" />
           </div>
         </div>
         <app-ls-button [value]="'Login'" />
       </form>
-      <h2 id="signup-phrase">Don't have an account? <a routerLink="/login/sign-up">Create One Here</a></h2>
+      <h2 id="signup-phrase">Don't have an account? <a routerLink="/sign-up">Create One Here</a></h2>
     </app-login-form>
     <router-outlet />
   `,

@@ -24,8 +24,8 @@ import { Component, input } from '@angular/core';
           height: 3px;
           position: absolute;
           background: black;
-          top: 4vh;
-          left: 1.2vw;
+          top: 3.8vh;
+          left: 1.23vw;
           border-radius: 20px;
           transition: 0.5s;
           @media screen and (min-width: 1600px) {

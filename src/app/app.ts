@@ -7,11 +7,13 @@ import { Footer } from './components/footer/footer';
   selector: 'app-root',
   imports: [RouterOutlet, Header, Footer],
   template: `
-    <app-header />
-    <router-outlet />
-    <app-footer />
+    <div class="the-app">
+      <app-header />
+      <router-outlet />
+      <app-footer />
+    </div>
   `,
-  styles: [],
+  styles: [``],
 })
 export class App {
   protected readonly title = signal('thousand-knots');

@@ -24,7 +24,7 @@ import { RouterLink } from "@angular/router";
             <app-shovable-btn>
               <mat-icon>bookmark</mat-icon>
             </app-shovable-btn>
-            <app-shovable-btn>
+            <app-shovable-btn routerLink="/cart">
               <mat-icon>shopping_cart</mat-icon>
             </app-shovable-btn>
             <app-shovable-btn class="lg:hidden">
