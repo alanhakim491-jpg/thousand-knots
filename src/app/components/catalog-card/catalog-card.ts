@@ -29,12 +29,12 @@ import { ShovableBtn } from "../buttons/shovable-btn/shovable-btn";
           <p>{{ product().description }}</p>
         </div>
       </div>
-      <div class="props flex flex-col justify-between gap-3">
-        <h2>{{ product().title }}</h2>
-        <div class="the-bottom flex flex-row justify-between items-center">
+      <div class="props flex flex-col justify-between gap-2">
+        <div class="the-bottom flex flex-col gap-[0.5vh]">
+          <h2>{{ product().title }}</h2>
           <p>{{ '$' + product().price  }}</p>
-          <app-cart-button label='Cart' (btnClicked)="cartService.addToCart(product())" />
         </div>
+        <app-cart-button label='Cart' (btnClicked)="cartService.addToCart(product())" />
       <div>
     </div>
   `,
