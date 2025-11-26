@@ -15,10 +15,6 @@ form {
     padding: 1.2vh 0;
     input {
         padding: 0 0.5vw;
-        transition: border 0.3s ease-in-out;
-        &:hover {
-            border: 2px solid black;
-        }
     }
     .email {
         @include mixins.flex-col;
