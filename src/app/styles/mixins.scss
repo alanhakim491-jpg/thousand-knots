@@ -25,6 +25,12 @@
     justify-content: center;
 }
 
+@mixin row-align_center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 @mixin glassmorphic-latte {
     backdrop-filter: blur(8px) saturate(100%);
     -webkit-backdrop-filter: blur(8px) saturate(100%);
