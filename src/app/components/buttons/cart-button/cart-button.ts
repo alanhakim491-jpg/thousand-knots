@@ -16,7 +16,7 @@ import { Component, input, output } from '@angular/core';
       transition: 0.3s ease;
       cursor: pointer;
       &:hover {
-        scale: 1.1;
+        scale: 1.05;
       }
     }
   `,
