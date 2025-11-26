@@ -8,7 +8,7 @@ import { Cart } from 'src/app/services/cart';
   selector: 'app-cart-page',
   imports: [CcContent, CcHeader, CartItem],
   template: `
-    <app-cc-header [header]="'Cart'" />
+    <app-cc-header [header]="'My Cart'" />
     <app-cc-content layout="flex-col">
       @for (item of cartService.cart(); track item.id) {
         <app-cart-item [item]="item" />
