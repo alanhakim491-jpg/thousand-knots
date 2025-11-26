@@ -1,10 +1,11 @@
-import { Component, input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-primary-button',
-  imports: [],
+  imports: [NgClass],
   template: `
-    <button class="prm-btn">{{ label() }}</button>
+    <button class="prm-btn" [ngClass]="style">{{ label() }}</button>
   `,
   styles: `
     .prm-btn {
@@ -13,11 +14,14 @@ import { Component, input } from '@angular/core';
       text-align: center;
       width: 100%;
       padding: 1.5vh 1.2vw;
-      border-radius: 30px;
       @media screen and (min-width: 1600px) {
             font-size: 1.3rem;
       }
       cursor: pointer;
+    }
+
+    .prm-btn.header {
+      position: relative;
       &::after {
           content: '';
           width: 0;
@@ -39,5 +43,7 @@ import { Component, input } from '@angular/core';
   `,
 })
 export class PrimaryButton {
-  label = input('')
+  label = input('');
+
+  @Input() style: 'header' | 'cart' = 'cart'
 }
