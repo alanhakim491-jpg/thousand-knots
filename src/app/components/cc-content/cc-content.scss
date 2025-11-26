@@ -5,16 +5,26 @@
     height: fit-content;
     padding: 7vh 0;
     padding-bottom: 13vh;
-    display: grid;
     position: relative;
     z-index: 111;
-    grid-template-columns: 16vw 16vw 16vw 16vw;
-    gap: 2vh 2vw;
-    justify-content: center;
     border-radius: 7px;
     @include mixins.neumorphism;
     background: url('/assets/floral-bcg.png');
+}
+
+.cc.grid {
+    display: grid;
+    grid-template-columns: 16vw 16vw 16vw 16vw;
+    justify-content: center;
+    gap: 2vh 2vw;
     @media screen and (max-width: 500px) {
         grid-template-columns: 30vw 30vw;
     }
+}
+
+.cc.flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
 }
