@@ -24,4 +24,5 @@ import { Component, input, output } from '@angular/core';
 export class CartButton {
   label = input('');
   btnClicked = output();
+
 }
