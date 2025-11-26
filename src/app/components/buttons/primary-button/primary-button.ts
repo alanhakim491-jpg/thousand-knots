@@ -5,11 +5,10 @@ import { NgClass } from '@angular/common';
   selector: 'app-primary-button',
   imports: [NgClass],
   template: `
-    <button class="prm-btn" [ngClass]="style">{{ label() }}</button>
+    <button class="prm-btn" [ngClass]="effect">{{ label() }}</button>
   `,
   styles: `
     .prm-btn {
-      position: relative;
       height: 100%;
       text-align: center;
       width: 100%;
@@ -22,6 +21,7 @@ import { NgClass } from '@angular/common';
 
     .prm-btn.header {
       position: relative;
+      width: 100%;
       &::after {
           content: '';
           width: 0;
@@ -40,10 +40,16 @@ import { NgClass } from '@angular/common';
             width: 40%;
       } 
     }
+    .prm-btn.cart {
+      transition: opacity 0.2s ease;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
   `,
 })
 export class PrimaryButton {
   label = input('');
 
-  @Input() style: 'header' | 'cart' = 'cart'
+  @Input() effect: 'header' | 'cart' = 'cart'
 }
