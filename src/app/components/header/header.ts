@@ -12,9 +12,9 @@ import { RouterLink } from "@angular/router";
       <img routerLink='/' src="../../assets/tk-logo-removebg-preview.png" alt="TK-Logo"/>
       <div class="by-btns flex flex-row items-center">
         <ul class="primary-btnList">
-          <app-primary-button label='Catalog' routerLink="/catalog" style="header" />
-          <app-primary-button label='Contact' routerLink="/contact" style="header" />
-          <app-primary-button label='Profile' routerLink="/login" style="header" />        
+          <app-primary-button label='Catalog' routerLink="/catalog" effect="header" />
+          <app-primary-button label='Contact' routerLink="/contact" effect="header" />
+          <app-primary-button label='Profile' routerLink="/login" effect="header" />        
         </ul>
         @if (!showSearch()) {
           <ul class="shovable-btnList" #shovableRef>
