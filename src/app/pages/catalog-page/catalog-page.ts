@@ -9,7 +9,7 @@ import { Catalog } from '../../services/catalog';
   imports: [CatalogCard, CcContent, CcHeader],
   template: `
     <app-cc-header [header]="'Explore'" />
-    <app-cc-content>
+    <app-cc-content layout="grid">
       @for (p of products(); track p.id ) {
         <app-catalog-card [product]='p' />
       }
