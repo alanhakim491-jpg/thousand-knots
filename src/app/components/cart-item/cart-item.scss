@@ -1,0 +1,41 @@
+@use '../../styles/mixins.scss';
+
+.cart-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include mixins.glassmorphic-arctic;
+    border-radius: 15px;
+    padding: 2vh 3vw;
+    width: 65vw;
+    .left {
+        @include mixins.row-align_center;
+        gap: 2vw;
+        img {
+            border-radius: 7px;
+            width: 5vw;
+            height: 15h;
+        }
+        .words {
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            h2 {
+                font-size: 1.5rem;
+                font-weight: 500;
+            }
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .right {
+        @include mixins.flex-col_center;
+        .inc-dec {
+            @include mixins.row-justify_center;
+            app-shovable-btn mat-icon {
+                font-size: 1rem;
+            }
+        }
+    }
+}
