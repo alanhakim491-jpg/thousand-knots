@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { CatalogPage } from './pages/catalog-page/catalog-page';
+import { CartPage } from './pages/cart-page/cart-page';
 
 export const routes: Routes = [
     {
@@ -18,7 +19,7 @@ export const routes: Routes = [
     },
     {
         path: 'sign-up',
-        loadComponent: () => { return import('./pages/sign-up/sign-up').then((m) => m.SignUp)}
+        loadComponent: () => { return import('./pages/sign-up/sign-up').then((m) => m.SignUp)},
     },
     {
         path: 'contact',
@@ -26,6 +27,11 @@ export const routes: Routes = [
     },
     {
         path: 'cart',
-        loadComponent: () => { return import('./pages/cart-page/cart-page').then((m) => m.CartPage)}
+        component: CartPage,
+    },
+    {
+        path: 'by-cat',
+        loadComponent: () => { return import('./pages/by-collection/by-collection').then((m) => m.ByCollection)},
     }
+
 ];
