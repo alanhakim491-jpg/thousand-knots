@@ -1,10 +1,10 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-ls-button',
   imports: [],
   template: `
-    <input type="submit" [value]='value()' class="mx-auto my-[3vh] text-center py-2 px-8 rounded-lg cursor-pointer" />
+    <input type="submit" [value]='value()' class="mx-auto my-[3vh] text-center py-2 px-8 rounded-lg cursor-pointer" (click)=lsClicked.emit() />
   `,
   styles: `
     input[type='submit'] {
@@ -30,5 +30,6 @@ import { Component, input } from '@angular/core';
   `,
 })
 export class LsButton {
-  value = input('')
+  value = input('');
+  lsClicked = output();
 }

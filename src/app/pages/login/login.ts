@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { LoginForm } from '../../components/login-form/login-form';
+import { LoginForm } from '../../components/containers/login-form/login-form';
 import { RouterOutlet, RouterLink } from '@angular/router';
-import { LsButton } from "../../components/ls-button/ls-button";
+import { LsButton } from "../../components/buttons/ls-button/ls-button";
 
 @Component({
   selector: 'app-login',

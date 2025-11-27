@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { LoginForm } from "../../components/login-form/login-form";
-import { LsButton } from 'src/app/components/ls-button/ls-button';
+import { LoginForm } from "../../components/containers/login-form/login-form";
+import { LsButton } from 'src/app/components/buttons/ls-button/ls-button';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms'
 

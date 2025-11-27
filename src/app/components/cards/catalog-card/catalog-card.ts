@@ -1,10 +1,10 @@
 import { Component, inject, input, signal } from '@angular/core';
-import { Catalog } from '../../services/catalog';
-import { Cart } from '../../services/cart';
-import { Catalogs } from '../../models/catalog.types';
-import { CartButton } from '../buttons/cart-button/cart-button';
+import { Catalog } from 'src/app/services/catalog';
+import { Cart } from 'src/app/services/cart';
+import { Catalogs } from 'src/app/models/catalog.types';
+import { CartButton } from '../../buttons/cart-button/cart-button';
 import { MatIconModule } from '@angular/material/icon';
-import { ShovableBtn } from "../buttons/shovable-btn/shovable-btn";
+import { ShovableBtn } from '../../buttons/shovable-btn/shovable-btn';
 
 @Component({
   selector: 'app-catalog-card',
@@ -19,7 +19,7 @@ import { ShovableBtn } from "../buttons/shovable-btn/shovable-btn";
             Out of stock
           }
         </div>
-        <app-shovable-btn (btnClick)="markHandler()">
+        <app-shovable-btn (btnClick)="markHandler()" where="catalog">
           <mat-icon>{{ bookmarkIcon() }}</mat-icon>
         </app-shovable-btn>
       </div>

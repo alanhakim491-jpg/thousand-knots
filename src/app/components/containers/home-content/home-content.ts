@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ContentButton } from "../buttons/content-button/content-button";
+import { ContentButton } from "../../buttons/content-button/content-button";
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { RouterLink } from '@angular/router';
       <div class="display_l">
         <h1>Discover</h1>
         <div class="the-buttons">
-          <app-content-button label='Shop Now' routerLink="/catalog" />
+          <app-content-button label='Shop Now' routerLink="/by-cat" />
           <app-content-button label='New Collection' />
         </div>
       </div>

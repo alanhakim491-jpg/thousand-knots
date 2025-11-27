@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { CcContent } from 'src/app/components/cc-content/cc-content';
-import { CartItem } from 'src/app/components/cart-item/cart-item';
+import { CcContent } from 'src/app/components/containers/cc-content/cc-content';
+import { CartItem } from 'src/app/components/cards/cart-item/cart-item';
 import { CcHeader } from 'src/app/components/cc-header/cc-header';
 import { Cart } from 'src/app/services/cart';
 

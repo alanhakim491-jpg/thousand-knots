@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { CatalogCard } from '../../components/catalog-card/catalog-card';
-import { CcContent } from 'src/app/components/cc-content/cc-content';
+import { CatalogCard } from 'src/app/components/cards/catalog-card/catalog-card';
+import { CcContent } from 'src/app/components/containers/cc-content/cc-content';
 import { CcHeader } from 'src/app/components/cc-header/cc-header';
 import { Catalog } from '../../services/catalog';
 

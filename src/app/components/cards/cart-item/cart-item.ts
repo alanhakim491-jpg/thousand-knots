@@ -1,8 +1,8 @@
 import { Component, input, inject } from '@angular/core';
 import { Carts } from 'src/app/models/cart.types';
 import { Cart } from 'src/app/services/cart';
-import { PrimaryButton } from '../buttons/primary-button/primary-button';
-import { ShovableBtn } from '../buttons/shovable-btn/shovable-btn';
+import { PrimaryButton } from '../../buttons/primary-button/primary-button';
+import { ShovableBtn } from '../../buttons/shovable-btn/shovable-btn';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({

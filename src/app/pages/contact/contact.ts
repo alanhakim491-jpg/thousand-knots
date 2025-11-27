@@ -1,5 +1,5 @@
 import { Component, signal, ViewChild, ElementRef } from '@angular/core';
-import { LoginForm } from '../../components/login-form/login-form';
+import { LoginForm } from '../../components/containers/login-form/login-form';
 
 @Component({
   selector: 'app-contact',
