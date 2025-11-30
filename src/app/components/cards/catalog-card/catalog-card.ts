@@ -1,4 +1,5 @@
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, inject, input, Input, signal } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { Catalog } from 'src/app/services/catalog';
 import { Cart } from 'src/app/services/cart';
 import { Catalogs } from 'src/app/models/catalog.types';
@@ -8,10 +9,10 @@ import { ShovableBtn } from '../../buttons/shovable-btn/shovable-btn';
 
 @Component({
   selector: 'app-catalog-card',
-  imports: [CartButton, MatIconModule, ShovableBtn],
+  imports: [CartButton, MatIconModule, ShovableBtn, NgClass],
   template: `
-    <div class="catalog-card">
-      <div class="the-top">
+    <div class="catalog-card" [ngClass]='size'>
+      @if (size === 'four-size') {
         <div class="stock" [class]="product().sku ? 'text-black' : 'text-rose-400'">
           @if (product().sku) {
             {{ product().sku }} left
@@ -19,22 +20,30 @@ import { ShovableBtn } from '../../buttons/shovable-btn/shovable-btn';
             Out of stock
           }
         </div>
-        <app-shovable-btn (btnClick)="markHandler()" where="catalog">
-          <mat-icon>{{ bookmarkIcon() }}</mat-icon>
-        </app-shovable-btn>
-      </div>
+      }
       <div class="the-image">
-        <img [src]="product().imageURL" class="mb-2 rounded-lg"/>
-        <div class="desc-over">
-          <p>{{ product().description }}</p>
-        </div>
+        <img [src]="product().imageURL" class="mb-2"/>
+        @if (size === 'four-size') {
+          <div class="desc-over">
+            <p>{{ product().description }}</p>
+          </div>
+        }
       </div>
-      <div class="props flex flex-col justify-between gap-2">
-        <div class="the-bottom flex flex-col gap-[0.5vh]">
+      <div class="props flex flex-col justify-between gap-3">
+        <div class="the-bottom flex flex-row justify-between">
           <h2>{{ product().title }}</h2>
-          <p>{{ '$' + product().price  }}</p>
+          <div class="p-b">
+            <p>{{ '$' + product().price  }}</p>
+            @if (size === 'four-size') {
+              <app-shovable-btn (btnClick)="markHandler()" where="catalog">
+                <mat-icon>{{ bookmarkIcon() }}</mat-icon>
+              </app-shovable-btn>
+            }
+          </div>
         </div>
-        <app-cart-button label='Cart' (btnClicked)="cartService.addToCart(product())" />
+        @if (size === 'four-size') {
+          <app-cart-button label='Cart' (btnClicked)="cartService.addToCart(product())" />
+        }
       <div>
     </div>
   `,
@@ -53,4 +62,6 @@ export class CatalogCard {
       this.bookmarkIcon() === 'bookmark_border' ? 'bookmark' : 'bookmark_border'
     );
   }
+
+  @Input() size: 'two-size' | 'four-size' | 'one-size' = 'four-size';
 }

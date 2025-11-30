@@ -14,11 +14,11 @@ export const routes: Routes = [
         component: CatalogPage,
     },
     {
-        path: 'login',
+        path: 'profile/login',
         loadComponent: () => { return import('./pages/login/login').then((m) => m.Login) },
     },
     {
-        path: 'sign-up',
+        path: 'profile/sign-up',
         loadComponent: () => { return import('./pages/sign-up/sign-up').then((m) => m.SignUp)},
     },
     {
@@ -29,9 +29,5 @@ export const routes: Routes = [
         path: 'cart',
         component: CartPage,
     },
-    {
-        path: 'by-cat',
-        loadComponent: () => { return import('./pages/by-collection/by-collection').then((m) => m.ByCollection)},
-    }
 
 ];

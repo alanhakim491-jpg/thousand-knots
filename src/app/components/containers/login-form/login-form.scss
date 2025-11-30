@@ -2,10 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Meie+Script&display=swap');
 
 .login {
-    background: url('/assets/floral-bcg.png') no-repeat center/cover;
     height: 70%;
     width: 65vw;
     padding: 4.5vh 0;
-    margin: 10vh auto;
-    @include mixins.neumorphism;
+    margin: 6vh auto;
 }

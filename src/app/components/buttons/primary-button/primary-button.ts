@@ -10,9 +10,8 @@ import { NgClass } from '@angular/common';
   styles: `
     .prm-btn {
       height: 100%;
-      text-align: center;
-      width: 100%;
-      padding: 1.5vh 1.2vw;
+      text-align: left;
+      padding: 1.5vh 3.4vw;
       @media screen and (min-width: 1600px) {
             font-size: 1.3rem;
       }
@@ -25,19 +24,19 @@ import { NgClass } from '@angular/common';
       &::after {
           content: '';
           width: 0;
-          height: 3px;
+          height: 1.2px;
           position: absolute;
           background: black;
           top: 3.8vh;
-          left: 1.23vw;
+          left: 3.45vw;
           border-radius: 20px;
-          transition: 0.5s;
+          transition: 0.2s;
           @media screen and (min-width: 1600px) {
             top: 3.3vh;
           }
       }
       &:hover::after {
-            width: 40%;
+            width: 13%;
       } 
     }
     .prm-btn.cart {

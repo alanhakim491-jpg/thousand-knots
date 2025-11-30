@@ -1,24 +1,27 @@
 @use '../../../styles/mixins.scss';
 
 .cc {
-    margin: -1vh 10vw;
+    margin: 0 2vw;
     height: fit-content;
-    padding: 7vh 0;
-    padding-bottom: 13vh;
+    margin-bottom: 15vh;
     position: relative;
-    z-index: 111;
-    border-radius: 7px;
-    @include mixins.neumorphism;
-    background: url('/assets/floral-bcg.png');
+}
+
+.cc.flex-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10vh 0;
+    gap: 80vh;
 }
 
 .cc.grid {
     display: grid;
-    grid-template-columns: 16vw 16vw 16vw 16vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: center;
-    gap: 2vh 2vw;
+    gap: 27vh 0;
     @media screen and (max-width: 500px) {
-        grid-template-columns: 30vw 30vw;
+        grid-template-columns: 1fr;
     }
 }
 
@@ -27,4 +30,21 @@
     flex-direction: column;
     align-items: center;
     gap: 3vh;
+}
+
+.cc.two-col {
+    display: flex;
+    flex-direction: column;
+    margin: 0 7vw;
+}
+
+.cc.grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    padding: 6vh 0;
+    gap: 50vh 0;
+    @media screen and (max-width: 500px) {
+        grid-template-columns: 1fr;
+    }
 }

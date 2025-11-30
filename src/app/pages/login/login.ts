@@ -23,7 +23,7 @@ import { LsButton } from "../../components/buttons/ls-button/ls-button";
         </div>
         <app-ls-button [value]="'Login'" />
       </form>
-      <h2 id="signup-phrase">Don't have an account? <a routerLink="/sign-up">Create One Here</a></h2>
+      <h2 id="signup-phrase">Don't have an account? <a routerLink="/profile/sign-up">Create One Here</a></h2>
     </app-login-form>
     <router-outlet />
   `,

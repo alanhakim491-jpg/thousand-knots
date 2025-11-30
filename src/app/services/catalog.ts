@@ -24,7 +24,7 @@ export class Catalog {
     },
     {
       id: 3,
-      title: 'Dandelion Drift Shorts PJ Set',
+      title: 'Drift Shorts PJ Set',
       price: 45,
       description: 'Short sleeves with matching shorts dandelion patterned msulin cotton pj set',
       imageURL: 'https://thethousandknot.com/cdn/shop/files/46b0439f-d25a-4e7a-8c46-5d3174ae7d98.jpg?v=1744407861&width=360',

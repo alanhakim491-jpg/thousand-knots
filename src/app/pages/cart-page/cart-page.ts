@@ -8,14 +8,26 @@ import { Cart } from 'src/app/services/cart';
   selector: 'app-cart-page',
   imports: [CcContent, CcHeader, CartItem],
   template: `
-    <app-cc-header [header]="'My Cart'" />
-    <app-cc-content layout="flex-col">
-      @for (item of cartService.cart(); track item.id) {
-        <app-cart-item [item]="item" />
-      }
+    <app-cc-header [header]="'My Cart'" alignment="left" />
+    <app-cc-content layout="two-col">
+      <div class="left">
+        @for (item of cartService.cart(); track item.id) {
+          <app-cart-item [item]="item" />
+        }
+      </div>
+      <div class="right">
+
+      </div>
     </app-cc-content>
   `,
-  styles: ``,
+  styles: `
+    .left {
+      flex-basis: 60%;
+    }
+    .right {
+      flex-basis: 40%;
+    }
+  `,
 })
 export class CartPage {
 

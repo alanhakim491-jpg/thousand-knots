@@ -1,47 +1,70 @@
 @use '../../styles/mixins.scss' as mixins;
 
 #header {
-        font-family: 'Roboto Condensed', sans-serif;
-        width: 85%;
-        height: 9vh;
-        box-shadow: -10px 10px 20px 5px rgba(255, 255, 255, 0.04), 10px -10px 20px 5px rgba(0, 0, 0, 0.08);
-        margin: 3vh auto;
-    img {
-        width: 15%;
-        height: 80%;
-        margin: auto 2vw;
-        cursor: pointer;
-        @media screen and (max-width: 500px) {
-            width: 40%;
-        }
-    }
-    h2 {
-        font-size: 2rem;
-    }
-    .primary-btnList {
-        font-size: 1.1rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    background: transparent;
+    font-weight: 300;
+    width: 95%;
+    height: 4vh;
+    margin: 0 2.5vw;
+    position: fixed;
+    z-index: 111;
+    .left {
         @include mixins.row-justify_center;
         align-items: center;
-        height: 100%;
-        margin: auto 0.3vw;
-        transition: 0.3s;
-        @media screen and (max-width: 500px) {
-            display: none;
+        gap: 1.5vw;
+        #menu-btn {
+            font-size: 2rem;
         }
-        &:hover {
-            border-radius: 30px;
-            @include mixins.neumorphism-inset;
+        img {
+            width: 22vw;
+            height: 10vh;
+            cursor: pointer;
+            @media screen and (max-width: 500px) {
+                width: 40%;
+            }
         }
     }
-    .shovable-btnList {
-        @include mixins.row-justify_center;
-        width: 9rem;
-        margin: auto 2vw;
-        mat-icon {
-            transition: opacity 0.2s ease-in-out;
-        }
-        mat-icon:hover {
-            opacity: 0.5;
+    .menu {
+        opacity: 0;
+        transform: translateX(-20px);
+        pointer-events: none;
+        position: absolute;
+        z-index: 111;
+        right: 77vw;
+        top: 5.2vw;
+        background-color: #f5f5f4;
+        font-size: 1.2rem;
+        padding: 34vh 0;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }     
+    .menu.open {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+    .by-btns {
+        .shovable-btnList {
+            @include mixins.row-justify_center;
+            width: 18rem;
+            margin: auto 1.2vw;
+            .search {
+                input {
+                    border-bottom: 1px solid black;
+                    height: 3vh;
+                    width: 12vw;
+                    padding: 0 0.2vw;
+                }
+                mat-icon {
+                    cursor: pointer;
+                }
+            }
+            mat-icon {
+                transition: opacity 0.2s ease-in-out;
+            }
+            mat-icon:hover {
+                opacity: 0.5;
+            }
         }
     }
 }

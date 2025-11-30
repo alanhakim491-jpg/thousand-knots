@@ -8,11 +8,12 @@ import { Component, input, output } from '@angular/core';
   `,
   styles: `
     button {
+      font-size: 1rem;
       width: 100%;
-      padding: 0.2rem 0.7rem;
+      background-color: black;
+      color: white;
+      padding: 0.5rem 0.7rem;
       border: 0.5px solid black;
-      border-radius: 7px;
-      box-shadow: -10px 10px 20px 5px rgba(255, 255, 255, 0.04), 10px -10px 20px 5px rgba(0, 0, 0, 0.08);
       transition: 0.3s ease;
       cursor: pointer;
       &:hover {
@@ -22,6 +23,7 @@ import { Component, input, output } from '@angular/core';
   `,
 })
 export class CartButton {
+  
   label = input('');
   btnClicked = output();
 

@@ -12,14 +12,14 @@ export class Cart {
   addToCart = (product: Catalogs) => {
     if (!product.sku) return; // guard to check for stock, if no stock, dont add
 
-    const current = this.cart(); // current is the cart current signal value, which is defined above as an array of Carts
+    const current = this.cart(); // current is the cart current signal value, which is defined above as an array of Carts (type model)
     const existingIndex = current.findIndex(p => p.id === product.id); // this searches for an item in the cart that matches the same id and returns -1 if nonexistent
 
     if (existingIndex > -1) {
       const updated = [...current]; // creates a new array to update
       updated[existingIndex] = { // updates to the current/existing instead of the ...current or old item
         ...updated[existingIndex],
-        count: updated[existingIndex].count + 1, // new array that spreads the existing item and increaasing the count by 1
+        count: updated[existingIndex].count + 1, // new array that spreads the existing item and increasing the count by 1
       };
       this.cart.set(updated); // updates the array within cart to be the updated one
     } else {

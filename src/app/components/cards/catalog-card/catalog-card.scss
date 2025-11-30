@@ -1,40 +1,46 @@
 @use '../../../styles/mixins.scss';
 
 .catalog-card {
-    height: 53vh;
-    width: 15vw;
     margin: 1.2vh auto;
-    padding: 0.8rem 1.3rem;
-    position: relative;
-    border-radius: 10px;
-    @include mixins.glassmorphic-arctic;
+    padding: 0.8rem 0;
+    font-family: 'Roboto Condensed', sans-serif;
     @media screen and (max-width: 500px) {
         width: 30vw;
-        height: 38vh
-    }
-    .the-top {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding-bottom: 1vh;
+        height: 38vh;
     }
     .props {
         h2 {
-            text-decoration: underline;
             cursor: pointer;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
             &:hover {
                 transform: translateX(0.3vw);
+                text-decoration: underline;
             }
         }
         p {
-            font-size: 1rem;
-            font-weight: 500;
+            font-weight: 400;
+        }
+        .p-b {
+            @include mixins.row-justify_center;
+            gap: 0.7vw;
         }
     }
     .the-image {
         position: relative;
+    }
+}
+
+.catalog-card.four-size {
+    height: 53vh;
+    width: 22vw;
+    h2 {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .the-image {
         height: auto;
         width: 100%;
         .desc-over {
@@ -43,7 +49,6 @@
             left: 0;
             width: 100%;
             height: 100%; /* exactly matches image size */
-            border-radius: 8px;
             background: rgba(0, 0, 0, 0.7);
             opacity: 0;
             transition: opacity 0.1s ease;
@@ -59,6 +64,28 @@
         }
         &:hover .desc-over {
             opacity: 0.5;
+        }
+    }
+}
+.catalog-card.two-size {
+    height: 65vh;
+    width: 30vw;
+    .the-image {
+        height: auto;
+        width: 30.2vw;
+        img {
+            width: 65vh;
+        }
+    }
+}
+.catalog-card.one-size {
+    height: 75vh;
+    width: 45vw;
+    .the-image {
+        height: auto;
+        width: 84vh;
+        img {
+            width: 84vh;
         }
     }
 }
