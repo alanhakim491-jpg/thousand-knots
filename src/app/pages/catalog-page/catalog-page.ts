@@ -12,10 +12,10 @@ import { MatIconModule } from '@angular/material/icon';
     <app-cc-header header="Catalog" />
     <div class="heading">
       <ul class="filter">
-        <li>View All</li>
-        <li>Pajamas</li>
-        <li>Slippers</li>
-        <li>Shirt Dresses</li>
+        <li (click)="setCategory('all')">View All</li>
+        <li (click)="setCategory('pajamas')">Pajamas</li>
+        <li (click)="setCategory('slippers')">Slippers</li>
+        <li (click)="setCategory('short dresses')">Shirt Dresses</li>
       </ul>
       <ul class="view">
         <li id="title">View<li>
@@ -33,9 +33,13 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./catalog-page.scss'],
 })
 export class CatalogPage {
-  catalogService = inject(Catalog)
+  catalogService = inject(Catalog);
 
-  products = this.catalogService.products
+  products = this.catalogService.products;
+
+  setCategory(category: string) {
+    this.catalogService.selectedCategory.set(category);
+  }
 
   layout = signal<'flex-one' | 'grid-two' | 'grid'>('grid');
   size = signal<'four-size' | 'two-size' | 'one-size'>('four-size');
