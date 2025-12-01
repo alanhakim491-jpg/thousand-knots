@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, computed } from '@angular/core';
 import { Catalogs } from '../models/catalog.types';
 import { Carts } from '../models/cart.types';
 
@@ -7,7 +7,15 @@ import { Carts } from '../models/cart.types';
 })
 export class Cart {
 
-  cart = signal<Carts[]>([]);
+  public cart = signal<Carts[]>([]);
+
+  public totalItems = computed(() => {
+    return this.cart().reduce((total, item) => total + item.count, 0);
+  })
+  public subTotal = computed(() => {
+    return this.cart().reduce((total, item) => total + (item.price * item.count), 0);
+  })
+  // what we did above was connect totalItems and subTotal to the values of the count, making their derived states reactive to the signals modified through the below functions
 
   addToCart = (product: Catalogs) => {
     if (!product.sku) return; // guard to check for stock, if no stock, dont add
