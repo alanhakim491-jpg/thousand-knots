@@ -4,10 +4,10 @@ import { CcHeader } from 'src/app/components/cc-header/cc-header';
 import { CcContent } from 'src/app/components/containers/cc-content/cc-content';
 import { Catalog } from '../../services/catalog';
 import { MatIconModule } from '@angular/material/icon';
-
+import { Footer } from '../../components/footer/footer';
 @Component({
   selector: 'app-catalog-page',
-  imports: [CatalogCard, CcHeader, CcContent, MatIconModule],
+  imports: [CatalogCard, CcHeader, CcContent, MatIconModule, Footer],
   template: `
     <app-cc-header header="Catalog" />
     <div class="heading">
@@ -29,6 +29,7 @@ import { MatIconModule } from '@angular/material/icon';
         <app-catalog-card [product]='p' [size]='size()' />
       }
     </app-cc-content>
+    <app-footer />
   `,
   styleUrls: ['./catalog-page.scss'],
 })
