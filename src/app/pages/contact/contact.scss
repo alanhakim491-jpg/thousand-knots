@@ -19,7 +19,7 @@
         margin: 6vh auto;
         padding: 0.5vh 0;
         width: 60%;
-        height: 35vh;
+        height: 45vh;
         @include mixins.flex-col_center;
         align-content: center;
         gap: 2vh;
@@ -32,8 +32,8 @@
             flex-direction: row;
             gap: 2vw;
             input {
-                width: 18vw;
-                height: 5vh;
+                width: 21vw;
+                height: 5.5vh;
                 padding: 0 1vw;
                 border: 1px solid black;
             }
@@ -42,13 +42,13 @@
             border: 1px solid black
         }
         input[type=email] {
-            width: 97%;
-            height: 30vh;
+            width: 97.5%;
+            height: 16vh;
             padding: 0 1vw;
         }
         textarea {
             padding: 1vh 1vw;
-            width: 97%;
+            width: 97.5%;
             height: 55vh;
             position: relative;
         }
@@ -65,8 +65,8 @@
         .char-count {
             padding: 1vh 2vw;
             position: absolute;
-            bottom: 33vh;
-            left: 63.4vw;
+            bottom: 23vh;
+            left: 66.3vw;
             font-size: 0.9rem;
         }
     }

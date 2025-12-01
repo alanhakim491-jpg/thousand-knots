@@ -1,11 +1,11 @@
 import { Component, signal, ViewChild, ElementRef } from '@angular/core';
 import { LoginForm } from '../../components/containers/login-form/login-form';
-
+import { Footer } from '../../components/footer/footer';
 @Component({
   selector: 'app-contact',
-  imports: [LoginForm],
+  imports: [LoginForm, Footer],
   template: `
-    <app-login-form>
+    <app-login-form form="contact">
       <div class="contact-us">
         <h1>Contact Us</h1>
         <form>
@@ -20,6 +20,7 @@ import { LoginForm } from '../../components/containers/login-form/login-form';
         </form>
       </div>
     </app-login-form>
+    <app-footer />
   `,
   styleUrls: ['./contact.scss'],
 })

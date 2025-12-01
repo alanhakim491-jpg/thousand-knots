@@ -2,8 +2,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Meie+Script&display=swap');
 
 .login {
-    height: 70%;
+    height: 90%;
     width: 65vw;
     padding: 4.5vh 0;
-    margin: 6vh auto;
+    margin: 0 auto;
+    margin-top: 6vh;
+    margin-bottom: 22vh;
+}
+
+.signup {
+    height: 90%;
+    width: 65vw;
+    padding: 4.5vh 0;
+    margin: 0 auto;
+    margin-top: 6vh;
+    margin-bottom: 17vh;
+}
+
+.contact {
+    width: 75vw;
+    padding: 4.5vh 0;
+    margin: 0 auto;
+    margin-top: 6vh;
+    margin-bottom: 2vh;
 }

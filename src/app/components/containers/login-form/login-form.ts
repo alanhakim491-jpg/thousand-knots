@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   template: `
-    <div class="login signup">
+    <div [ngClass]="form">
       <ng-content></ng-content>
     </div>
   `,
   styleUrls: ['./login-form.scss'],
 })
 export class LoginForm {
-
+  @Input() form: 'login' | 'signup' | 'contact' = 'login';
 }
