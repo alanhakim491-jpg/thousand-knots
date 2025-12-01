@@ -12,7 +12,7 @@ import { NgClass } from '@angular/common';
   styleUrls: ['./cc-content.scss'],
 })
 export class CcContent {
-  @Input() layout: 'grid' | 'flex-col' | 'two-col' | 'grid-two' | 'flex-one' = 'grid'; // indicates an input, whith options, and if none are passed it defaults to 'grid'
+  @Input() layout: 'grid' | 'flex-col' | 'row-two' | 'grid-two' | 'flex-one' = 'grid'; // indicates an input, whith options, and if none are passed it defaults to 'grid'
 }
 
 // what we did here is we chose to make a variable class using input
