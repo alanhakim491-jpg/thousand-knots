@@ -3,7 +3,7 @@
 .contact-us {
     h1 {
         font-family: 'Roboto Condensed', sans-serif;
-        font-size: 4.5rem;
+        font-size: 4rem;
         text-align: center;
         margin: 0 auto;
         padding: 10vh 0 7vh 0;
@@ -54,10 +54,11 @@
         }
         input[type=submit] {
             background-color: #ffe4e6;
-            padding: 1.3vh 1.5vw;
+            padding: 1.4vh 2vw;
             transition: background-color 0.3s ease-in-out;
             align-self: flex-start;
             margin-left: 0.55vw;
+            cursor: pointer;
             &:hover {
                 background-color: #fda4af;
             }
