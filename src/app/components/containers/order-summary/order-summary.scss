@@ -1,0 +1,57 @@
+@use '../../../styles/mixins.scss';
+
+.summary {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #e5e5e5;
+    border-radius: 5px;
+    @include mixins.flex-col_center;
+    gap: 3vh;
+    padding: 3vh 5%;
+    width: 100%;
+    h2 {
+        align-self: flex-start;
+        font-size: 2rem;
+        text-align: center;
+        font-weight: 500;
+    }
+    #title {
+        padding-bottom: 1vh;
+    }
+    .total-items {
+        @include mixins.justify-between;
+        width: 100%;
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+    .sub-total {
+        @include mixins.justify-between;
+        width: 100%;
+        padding-bottom: 1vh;
+        border-bottom: 1px solid black;
+        p {
+            font-size: 1.1rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+    form {
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        .card-select, .cash-select {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.3vw;
+            input {
+                height: 0.9rem;
+                width: 0.9rem;
+            }
+            label {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
