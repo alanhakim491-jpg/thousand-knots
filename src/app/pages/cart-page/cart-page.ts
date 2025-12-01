@@ -2,21 +2,22 @@ import { Component, inject } from '@angular/core';
 import { CcContent } from 'src/app/components/containers/cc-content/cc-content';
 import { CartItem } from 'src/app/components/cards/cart-item/cart-item';
 import { CcHeader } from 'src/app/components/cc-header/cc-header';
+import { OrderSummary } from 'src/app/components/containers/order-summary/order-summary';
 import { Cart } from 'src/app/services/cart';
 
 @Component({
   selector: 'app-cart-page',
-  imports: [CcContent, CcHeader, CartItem],
+  imports: [CcContent, CcHeader, CartItem, OrderSummary],
   template: `
     <app-cc-header [header]="'My Cart'" alignment="left" />
-    <app-cc-content layout="two-col">
+    <app-cc-content layout="row-two">
       <div class="left">
         @for (item of cartService.cart(); track item.id) {
           <app-cart-item [item]="item" />
         }
       </div>
       <div class="right">
-
+        <app-order-summary />
       </div>
     </app-cc-content>
   `,
