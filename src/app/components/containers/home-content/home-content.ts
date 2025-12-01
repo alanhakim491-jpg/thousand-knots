@@ -5,7 +5,9 @@ import { Component } from '@angular/core';
   imports: [],
   template: `
     <div class="display">
-      <img src="/assets/background.png" />
+      <div class="img-wrap">
+        <img src="/assets/background.png" />
+      </div>
       <ul>
         <li>____</li>
         <li>____</li>
