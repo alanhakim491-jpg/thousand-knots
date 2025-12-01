@@ -31,6 +31,13 @@
     align-items: center;
 }
 
+@mixin justify-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 @mixin glassmorphic-latte {
     backdrop-filter: blur(8px) saturate(100%);
     -webkit-backdrop-filter: blur(8px) saturate(100%);
