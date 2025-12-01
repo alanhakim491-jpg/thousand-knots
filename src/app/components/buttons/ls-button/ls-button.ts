@@ -9,7 +9,7 @@ import { Component, input, output } from '@angular/core';
   styles: `
     input[type='submit'] {
       font-size: 1.1rem;
-      border-radius: 7px;
+      border-radius: 5px;
       backdrop-filter: blur(5px) saturate(120%);
       -webkit-backdrop-filter: blur(5px) saturate(120%);
       background: rgba(224, 242, 254, 0.1);
