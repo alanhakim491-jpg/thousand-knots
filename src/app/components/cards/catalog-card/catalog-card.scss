@@ -11,11 +11,6 @@
     .props {
         h2 {
             cursor: pointer;
-            transition: transform 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
-            &:hover {
-                transform: translateX(0.3vw);
-                text-decoration: underline;
-            }
         }
         p {
             font-weight: 400;
@@ -36,6 +31,11 @@
     h2 {
         font-size: 1rem;
         font-weight: 300;
+        transition: transform 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+        &:hover {
+            transform: translateX(0.3vw);
+            text-decoration: underline;
+        }
     }
     p {
         font-size: 1rem;
@@ -70,6 +70,14 @@
 .catalog-card.two-size {
     height: 65vh;
     width: 30vw;
+    h2 {
+        font-size: 1.1rem;
+        font-weight: 300;
+        transition: transform 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+    }
+    p {
+        font-size: 1.2rem;
+    }
     .the-image {
         height: auto;
         width: 30.2vw;
