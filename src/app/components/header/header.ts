@@ -1,8 +1,9 @@
-import { Component, signal, ViewChild, ElementRef } from '@angular/core';
+import { Component, signal, computed, ViewChild, ElementRef, HostListener, inject } from '@angular/core';
+import { RouterLink, Router, NavigationEnd } from "@angular/router";
+import { MatIconModule } from '@angular/material/icon';
+import { filter } from 'rxjs/operators';
 import { PrimaryButton } from "../buttons/primary-button/primary-button";
 import { ShovableBtn } from '../buttons/shovable-btn/shovable-btn';
-import { MatIconModule } from '@angular/material/icon';
-import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,7 @@ import { RouterLink } from "@angular/router";
         </app-shovable-btn>
         <img routerLink='/' src="../../assets/tk-logo-removebg-preview.png" alt="TK-Logo"/> 
       </div>
-      <ul class="menu text-left" #menuRef>
+      <ul class="menu text-left" #menuRef [class.open]="menuOpen()">
         <app-primary-button label='Catalog' routerLink="/catalog" effect="header" />
         <app-primary-button label='Contact' routerLink="/contact" effect="header" />
         <app-primary-button label='New Collection' effect="header" />
@@ -44,16 +45,36 @@ import { RouterLink } from "@angular/router";
 })
 export class Header {
 
+  router = inject(Router);
+
   @ViewChild('menuRef') menuRef!: ElementRef<HTMLUListElement>
 
-  menuIcon = signal('menu');
+  menuOpen = signal(false);
+  menuIcon = computed(() => this.menuOpen() ? 'close' : 'menu')
+
+  constructor() {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.menuOpen.set(false);
+        document.body.classList.remove('no-scroll');
+      })
+  }
 
   menuHandler() {
-    this.menuRef.nativeElement.classList.toggle('open');
-    document.body.classList.toggle('no-scroll');
-    this.menuIcon.set(
-      this.menuIcon() === 'close' ? 'menu' : 'close'
-    );
+    this.menuOpen.set(!this.menuOpen());
+    document.body.classList.toggle('no-scroll', this.menuOpen());
+  }
+
+  @HostListener('document:click', ['$event'])
+  outsideHandler(event: Event) {
+    const target = event.target as HTMLElement;
+    const mElement = this.menuRef.nativeElement;
+
+    if (this.menuOpen() && !mElement.contains(target) && !target.closest('#menu-btn')) {
+      this.menuOpen.set(false);
+      document.body.classList.remove('no-scroll');
+    }
   }
 
 }
