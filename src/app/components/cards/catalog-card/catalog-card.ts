@@ -44,7 +44,7 @@ import { ShovableBtn } from '../../buttons/shovable-btn/shovable-btn';
           </div>
         </div>
         @if (size === 'four-size') {
-          <app-cart-button label='Cart' (btnClicked)="cartService.addToCart(product())" />
+          <app-cart-button width="catalog" label='Cart' (btnClicked)="cartService.addToCart(product())" />
         }
       <div>
     </div>
