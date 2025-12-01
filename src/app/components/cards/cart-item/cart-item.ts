@@ -23,7 +23,7 @@ import { MatIconModule } from '@angular/material/icon';
           <h2>{{ item().count }}</h2>
           <app-shovable-btn (btnClick)="cartService.incHandler(item().id)"><mat-icon>add</mat-icon></app-shovable-btn>
         </div>
-        <app-primary-button label='DELETE' class="text-[1.1rem]" effect="cart" (click)="cartService.delHandler(item().id)" />
+        <app-primary-button label='DELETE' class="text-[1.1rem] font-light" effect="cart" (click)="cartService.delHandler(item().id)" />
       </div>
     </div>
   `,
