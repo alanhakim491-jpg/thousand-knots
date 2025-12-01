@@ -33,7 +33,9 @@ import { ShovableBtn } from '../../buttons/shovable-btn/shovable-btn';
         <div class="the-bottom flex flex-row justify-between">
           <h2>{{ product().title }}</h2>
           <div class="p-b">
-            <p>{{ '$' + product().price  }}</p>
+            @if (size === 'four-size' || size === 'two-size') {
+              <p>{{ '$' + product().price  }}</p>
+            }
             @if (size === 'four-size') {
               <app-shovable-btn (btnClick)="markHandler()" where="catalog">
                 <mat-icon>{{ bookmarkIcon() }}</mat-icon>
