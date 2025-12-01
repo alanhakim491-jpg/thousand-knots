@@ -4,7 +4,7 @@ form {
     @include mixins.flex-col_center;
     height: 40%;
     width: 60%;
-    padding-bottom: 1.2vh;
+    padding-bottom: 6vh;
     margin: 0 auto;
 }
 
@@ -29,7 +29,7 @@ form {
 
 h1 {
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 5rem;
+    font-size: 4rem;
     text-align: center;
     margin: 0;
     padding: 10vh 0;
