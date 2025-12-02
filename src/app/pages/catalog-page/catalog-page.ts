@@ -12,16 +12,18 @@ import { Footer } from '../../components/footer/footer';
     <app-cc-header header="Catalog" />
     <div class="heading">
       <ul class="filter">
-        <li (click)="setCategory('all')">View All</li>
-        <li (click)="setCategory('pajamas')">Pajamas</li>
-        <li (click)="setCategory('slippers')">Slippers</li>
-        <li (click)="setCategory('short dresses')">Shirt Dresses</li>
+        <li (click)="setCategory('all')" [class.active]="catalogService.selectedCategory() === 'all'">View All</li>
+        <li (click)="setCategory('pajamas')" [class.active]="catalogService.selectedCategory() === 'pajamas'">Pajamas</li>
+        <li (click)="setCategory('slippers')" [class.active]="catalogService.selectedCategory() === 'slippers'">Slippers</li>
+        <li (click)="setCategory('shirt dresses')" [class.active]="catalogService.selectedCategory() === 'shirt dresses'">Shirt Dresses</li>
       </ul>
       <ul class="view">
         <li id="title">View<li>
-        <li class="cursor-pointer" (click)="oneHandler()"><mat-icon>square</mat-icon></li>
-        <li class="cursor-pointer" (click)="twoHandler()"><mat-icon>grid_view</mat-icon></li>
-        <li #fourRef class="cursor-pointer" (click)="fourHandler()"><mat-icon>view_module</mat-icon></li>
+        <div class="view-icons">
+          <li class="cursor-pointer" (click)="oneHandler()"><mat-icon>square</mat-icon></li>
+          <li class="cursor-pointer" (click)="twoHandler()"><mat-icon>grid_view</mat-icon></li>
+          <li class="cursor-pointer" (click)="fourHandler()"><mat-icon>view_module</mat-icon></li>
+        </div>
       </ul>
     </div>
     <app-cc-content [layout]='layout()'>

@@ -21,6 +21,9 @@
             font-weight: 300;
             cursor: pointer;
         }
+        li.active {
+            font-weight: 500;
+        }
     }
     .view {
         #title {
@@ -28,6 +31,10 @@
         }
         display: flex;
         flex-direction: row;
-        gap: 1vw;
+        gap: 1.5vw;
+        .view-icons {
+            @include mixins.row-justify_center;
+            gap: 0.4vw;
+        }
     }
 }
