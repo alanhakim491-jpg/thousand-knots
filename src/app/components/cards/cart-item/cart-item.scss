@@ -4,7 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2vh 0;
+    padding: 1vh 0;
+    padding-right: 3vw;
     width: 55vw;
     .left {
         @include mixins.row-align_center;
@@ -29,10 +30,16 @@
     }
     .right {
         @include mixins.flex-col_center;
+        padding-top: 3vh;
         .inc-dec {
             @include mixins.row-justify_center;
             app-shovable-btn mat-icon {
                 font-size: 1rem;
+            }
+            h2 {
+                @media screen and (min-width: 1600px) {
+                    margin-top: 0.7vh;
+                }
             }
         }
     }
