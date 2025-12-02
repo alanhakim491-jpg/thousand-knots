@@ -69,6 +69,11 @@
             bottom: 23vh;
             left: 66.3vw;
             font-size: 0.9rem;
+            @media screen and (min-width: 1600px) {
+                font-size: 1.2rem;
+                bottom: 24vh;
+                left: 66.8vw;
+            }
         }
     }
 }
