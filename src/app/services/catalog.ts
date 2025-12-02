@@ -58,7 +58,7 @@ export class Catalog {
       description: 'Long sleeves with matching pants natural cotton pjs',
       imageURL: 'https://thethousandknot.com/cdn/shop/files/IMG_8602_5d16fc15-bd39-474d-91c2-e39c6bb22156.jpg?v=1758787787&width=360',
       sku: 15,
-      category: 'short dresses'
+      category: 'shirt dresses'
     },
     {
       id: 7,
@@ -67,7 +67,7 @@ export class Catalog {
       description: 'Long sleeves with matching pants natural cotton pjs',
       imageURL: 'https://thethousandknot.com/cdn/shop/files/IMG_8602_5d16fc15-bd39-474d-91c2-e39c6bb22156.jpg?v=1758787787&width=360',
       sku: 15,
-      category: 'short dresses'
+      category: 'shirt dresses'
     },
     {
       id: 8,
@@ -76,7 +76,7 @@ export class Catalog {
       description: 'Long sleeves with matching pants natural cotton pjs',
       imageURL: 'https://thethousandknot.com/cdn/shop/files/IMG_8602_5d16fc15-bd39-474d-91c2-e39c6bb22156.jpg?v=1758787787&width=360',
       sku: 15,
-      category: 'short dresses'
+      category: 'shirt dresses'
     },
     {
       id: 9,
