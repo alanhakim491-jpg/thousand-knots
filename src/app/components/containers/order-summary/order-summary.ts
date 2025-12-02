@@ -13,7 +13,7 @@ import { Cart } from 'src/app/services/cart';
         <h2>{{ cartService.totalItems() + ' ' + 'Items' }}</h2> 
       </div>
       <div class="sub-total">
-        <p>Sub-Total</p>
+        <p>Subtotal</p>
         <h2>{{ '$' + cartService.subTotal() }}</h2>
       </div>
       <form>

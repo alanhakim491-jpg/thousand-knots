@@ -6,6 +6,7 @@
     border-radius: 5px;
     @include mixins.flex-col_center;
     gap: 3vh;
+    margin-top: 2.3vh;
     padding: 3vh 5%;
     width: 100%;
     h2 {
@@ -21,7 +22,7 @@
         @include mixins.justify-between;
         width: 100%;
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
     }
     .sub-total {
