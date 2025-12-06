@@ -8,11 +8,6 @@ import { Component } from '@angular/core';
       <div class="img-wrap">
         <img src="/assets/background.png" />
       </div>
-      <ul>
-        <li>____</li>
-        <li>____</li>
-        <li>____</li>
-      </ul>
     </div>
   `,
   styleUrls: ['./home-content.scss'],
