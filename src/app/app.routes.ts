@@ -29,5 +29,4 @@ export const routes: Routes = [
         path: 'cart',
         component: CartPage,
     },
-
 ];
