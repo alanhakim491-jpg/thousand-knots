@@ -11,10 +11,10 @@ import { NgClass } from '@angular/common';
   `,
   styles: `
     button {
-      height: 4vh;
       cursor: pointer;
     }
     button.header {
+      height: 4vh;
       width: 2vw;
       padding: 0.3vh 0.3vw;
       @media screen and (min-width: 1600px) {
