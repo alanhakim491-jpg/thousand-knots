@@ -12,15 +12,22 @@ import { ShovableBtn } from '../../buttons/shovable-btn/shovable-btn';
   imports: [CartButton, MatIconModule, ShovableBtn, NgClass],
   template: `
     <div class="catalog-card" [ngClass]='size'>
-      @if (size === 'four-size') {
-        <div class="stock" [class]="product().sku ? 'text-black' : 'text-rose-400'">
-          @if (product().sku) {
-            {{ product().sku }} left
-          } @else {
-            Out of stock
+      <div class="the-top">
+        @if (size === 'four-size') {
+          <div class="stock" [class]="product().sku ? 'text-black' : 'text-rose-400'">
+            @if (product().sku) {
+              {{ product().sku }} left
+            } @else {
+              Out of stock
+            }
+          </div>
+          @if (size === 'four-size') {
+            <app-shovable-btn (btnClick)="markHandler()" where="catalog">
+              <mat-icon>{{ bookmarkIcon() }}</mat-icon>
+            </app-shovable-btn>
           }
-        </div>
-      }
+        }
+      </div>
       <div class="the-image">
         <img [src]="product().imageURL" class="mb-2"/>
         @if (size === 'four-size') {
@@ -29,19 +36,12 @@ import { ShovableBtn } from '../../buttons/shovable-btn/shovable-btn';
           </div>
         }
       </div>
-      <div class="props flex flex-col justify-between gap-3">
-        <div class="the-bottom flex flex-row justify-between">
+      <div class="props flex flex-col gap-1">
+        <div class="the-bottom flex flex-row justify-between items-center">
           <h2>{{ product().title }}</h2>
-          <div class="p-b">
-            @if (size === 'four-size' || size === 'two-size') {
-              <p>{{ '$' + product().price  }}</p>
-            }
-            @if (size === 'four-size') {
-              <app-shovable-btn (btnClick)="markHandler()" where="catalog">
-                <mat-icon>{{ bookmarkIcon() }}</mat-icon>
-              </app-shovable-btn>
-            }
-          </div>
+          @if (size === 'four-size' || size === 'two-size') {
+            <p>{{ '$' + product().price  }}</p>
+          }
         </div>
         @if (size === 'four-size') {
           <app-cart-button width="catalog" label='Cart' (btnClicked)="cartService.addToCart(product())" />
