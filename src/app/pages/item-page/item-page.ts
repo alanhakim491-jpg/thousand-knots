@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
       </div>
     </div>
   `,
-  styles: ``,
+  styleUrls: ['./item-page.scss'],
 })
 export class ItemPage {
 
