@@ -1,4 +1,5 @@
 import { Component, inject, input, Input, signal } from '@angular/core';
+import { RouterLink } from '@angular/router'
 import { NgClass } from '@angular/common';
 import { Catalog } from 'src/app/services/catalog';
 import { Cart } from 'src/app/services/cart';
@@ -9,7 +10,7 @@ import { ShovableBtn } from '../../buttons/shovable-btn/shovable-btn';
 
 @Component({
   selector: 'app-catalog-card',
-  imports: [CartButton, MatIconModule, ShovableBtn, NgClass],
+  imports: [CartButton, MatIconModule, ShovableBtn, NgClass, RouterLink],
   template: `
     <div class="catalog-card" [ngClass]='size'>
       <div class="the-top">
@@ -38,7 +39,7 @@ import { ShovableBtn } from '../../buttons/shovable-btn/shovable-btn';
       </div>
       <div class="props flex flex-col gap-1">
         <div class="the-bottom flex flex-row justify-between items-center">
-          <h2>{{ product().title }}</h2>
+          <h2 routerLink="/item/:id">{{ product().title }}</h2>
           @if (size === 'four-size' || size === 'two-size') {
             <p>{{ '$' + product().price  }}</p>
           }
