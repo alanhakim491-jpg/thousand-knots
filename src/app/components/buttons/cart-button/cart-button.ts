@@ -8,10 +8,14 @@ import { NgClass } from '@angular/common';
     <div
       class="cart-button-container"
       (mouseenter)="width === 'catalog' && showSizes.set(true)"
-      (mouseleave)="width === 'catalog' && showSizes.set(false)"
+      (mouseleave)="onContainerMouseLeave()"
     >
       @if (width === 'catalog') {
-        <div class="sizes" [class.show]="showSizes()">
+        <div 
+          class="sizes" [class.show]="showSizes()"
+          (mouseenter)="onSizesMouseEnter()"
+          (mouseleave)="width === 'catalog' && showSizes.set(false)"
+          >
           @for (s of sizes; track s) {
             <div class="size">{{ s }}</div>
           }
@@ -36,7 +40,7 @@ import { NgClass } from '@angular/common';
       display: none;
       gap: 0.5vw;
       background-color: #f5f5f4;
-      padding: 0.5rem;
+      padding: 0.4rem;
       justify-content: center;
       flex-direction: row;
       position: absolute;
@@ -52,7 +56,7 @@ import { NgClass } from '@angular/common';
     }
 
     .size {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       padding: 0.5rem 0.7rem;
       cursor: pointer;
       transition: 0.3s ease;
@@ -85,9 +89,30 @@ import { NgClass } from '@angular/common';
 export class CartButton {
   showSizes = signal(false);
   sizes = ['S', 'M', 'L', 'XL'];
+  private hideTimeout: any;
   
   label = input('');
   btnClicked = output();
 
   @Input() width: 'catalog' | 'summary' = 'catalog';
+
+  onContainerMouseLeave() {
+    if (this.width === 'catalog') {
+      // Delay hiding to allow mouse to move to sizes div
+      this.hideTimeout = setTimeout(() => {
+        this.showSizes.set(false);
+      }, 100);
+    }
+  }
+
+  onSizesMouseEnter() {
+    if (this.width === 'catalog') {
+      // Cancel hide if mouse enters sizes
+      if (this.hideTimeout) {
+        clearTimeout(this.hideTimeout);
+        this.hideTimeout = null;
+      }
+      this.showSizes.set(true);
+    }
+  }
 }
