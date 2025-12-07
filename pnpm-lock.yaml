@@ -38,6 +38,12 @@ importers:
       '@angular/router':
         specifier: ^21.0.0
         version: 21.0.0(@angular/common@21.0.0(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@21.0.0(@angular/animations@21.0.0(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2)(zone.js@0.15.1)))(@angular/common@21.0.0(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2)(zone.js@0.15.1)))(rxjs@7.8.2)
+      '@ng-icons/core':
+        specifier: ^33.0.0
+        version: 33.0.0(@angular/common@21.0.0(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
+      '@ng-icons/simple-icons':
+        specifier: ^33.0.0
+        version: 33.0.0
       '@tailwindcss/postcss':
         specifier: ^4.1.17
         version: 4.1.17
@@ -723,23 +729,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fortawesome/angular-fontawesome@3.0.0':
-    resolution: {integrity: sha512-+8Dd6DoJnqArfrZ5NvjHyRL64IIkTigXclbOOcFdYQ8/WFERQUDaEU6SAV8Q0JBpJhMS1McED7YCOCAE6SIVyA==}
-    peerDependencies:
-      '@angular/core': ^20.0.0
-
-  '@fortawesome/fontawesome-common-types@7.1.0':
-    resolution: {integrity: sha512-l/BQM7fYntsCI//du+6sEnHOP6a74UixFyOYUyz2DLMXKx+6DEhfR3F2NYGE45XH1JJuIamacb4IZs9S0ZOWLA==}
-    engines: {node: '>=6'}
-
-  '@fortawesome/fontawesome-svg-core@7.1.0':
-    resolution: {integrity: sha512-fNxRUk1KhjSbnbuBxlWSnBLKLBNun52ZBTcs22H/xEEzM6Ap81ZFTQ4bZBxVQGQgVY0xugKGoRcCbaKjLQ3XZA==}
-    engines: {node: '>=6'}
-
-  '@fortawesome/free-solid-svg-icons@7.1.0':
-    resolution: {integrity: sha512-Udu3K7SzAo9N013qt7qmm22/wo2hADdheXtBfxFTecp+ogsc0caQNRKEb7pkvvagUGOpG9wJC1ViH6WXs8oXIA==}
-    engines: {node: '>=6'}
-
   '@inquirer/ansi@1.0.2':
     resolution: {integrity: sha512-S8qNSZiYzFd0wAcyG5AXCvUHC5Sr7xpZ9wZ2py9XR88jUz8wooStVx5M6dRzczbBWjic9NP7+rY0Xi7qqK/aMQ==}
     engines: {node: '>=18'}
@@ -1099,6 +1088,16 @@ packages:
 
   '@napi-rs/wasm-runtime@1.0.7':
     resolution: {integrity: sha512-SeDnOO0Tk7Okiq6DbXmmBODgOAb9dp9gjlphokTUxmt8U3liIP1ZsozBahH69j/RJv+Rfs6IwUKHTgQYJ/HBAw==}
+
+  '@ng-icons/core@33.0.0':
+    resolution: {integrity: sha512-yLRBA6FnvW16dCCqiSoA7YrCwsPcrrwmh/VylmMLHZuBe7lmPnBJ5JE8hILU9HmYr+HPPXoH47esu881M7lftA==}
+    peerDependencies:
+      '@angular/common': '>=21.0.0'
+      '@angular/core': '>=21.0.0'
+      rxjs: ^6.5.3 || ^7.4.0
+
+  '@ng-icons/simple-icons@33.0.0':
+    resolution: {integrity: sha512-gm1C1JhoTzuzyqNpuhHNlouNcoagTVAyh1VxXqGJ1kBGIJhkb/briVwRAYv0yJcHY03oL3NZv7RBjQZ1RVdxCQ==}
 
   '@npmcli/agent@4.0.0':
     resolution: {integrity: sha512-kAQTcEN9E8ERLVg5AsGwLNoFb+oEG6engbqAU2P43gD4JEIkNGMHdVQ096FsOAAYpZPB0RSt0zgInKIAS1l5QA==}
@@ -3868,22 +3867,6 @@ snapshots:
   '@esbuild/win32-x64@0.26.0':
     optional: true
 
-  '@fortawesome/angular-fontawesome@3.0.0(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2)(zone.js@0.15.1))':
-    dependencies:
-      '@angular/core': 21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2)(zone.js@0.15.1)
-      '@fortawesome/fontawesome-svg-core': 7.1.0
-      tslib: 2.8.1
-
-  '@fortawesome/fontawesome-common-types@7.1.0': {}
-
-  '@fortawesome/fontawesome-svg-core@7.1.0':
-    dependencies:
-      '@fortawesome/fontawesome-common-types': 7.1.0
-
-  '@fortawesome/free-solid-svg-icons@7.1.0':
-    dependencies:
-      '@fortawesome/fontawesome-common-types': 7.1.0
-
   '@inquirer/ansi@1.0.2': {}
 
   '@inquirer/checkbox@4.3.2(@types/node@24.10.1)':
@@ -4189,6 +4172,17 @@ snapshots:
       '@emnapi/runtime': 1.7.1
       '@tybys/wasm-util': 0.10.1
     optional: true
+
+  '@ng-icons/core@33.0.0(@angular/common@21.0.0(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)':
+    dependencies:
+      '@angular/common': 21.0.0(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
+      '@angular/core': 21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2)(zone.js@0.15.1)
+      rxjs: 7.8.2
+      tslib: 2.8.1
+
+  '@ng-icons/simple-icons@33.0.0':
+    dependencies:
+      tslib: 2.8.1
 
   '@npmcli/agent@4.0.0':
     dependencies:

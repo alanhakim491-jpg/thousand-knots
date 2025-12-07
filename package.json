@@ -32,6 +32,8 @@
     "@angular/material": "^21.0.0",
     "@angular/platform-browser": "^21.0.0",
     "@angular/router": "^21.0.0",
+    "@ng-icons/core": "^33.0.0",
+    "@ng-icons/simple-icons": "^33.0.0",
     "@tailwindcss/postcss": "^4.1.17",
     "hammerjs": "^2.0.8",
     "postcss": "^8.5.6",
