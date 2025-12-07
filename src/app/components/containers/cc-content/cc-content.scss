@@ -38,6 +38,13 @@
     margin: 0 7vw;
 }
 
+.cc.contact {
+    display: flex;
+    flex-direction: row;
+    margin: 5vh 0;
+    width: 75%;
+}
+
 .cc.grid-two {
     display: grid;
     grid-template-columns: 1fr 1fr;
