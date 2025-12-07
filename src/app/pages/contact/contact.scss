@@ -1,12 +1,21 @@
 @use '../../styles/mixins.scss' as mixins;
 
+app-cc-content {
+    margin-top: 10vh;
+    padding-top: 10vh;
+}
+
+app-login-form {
+    flex-basis: 50%;
+    align-self: flex-start;
+}
 .contact-us {
     h1 {
         font-family: 'Roboto Condensed', sans-serif;
-        font-size: 4rem;
+        font-size: 3rem;
         text-align: center;
-        margin: 0 auto;
-        padding: 10vh 0 7vh 0;
+        margin: 0;
+        padding: 10vh 0 2vh 0;
         @media screen and (min-width: 1600px) {
             font-size: 6.5rem;
         }
@@ -66,8 +75,8 @@
         .char-count {
             padding: 1vh 2vw;
             position: absolute;
-            bottom: 23vh;
-            left: 66.3vw;
+            bottom: 17vh;
+            left: 54.4vw;
             font-size: 0.9rem;
             @media screen and (min-width: 1600px) {
                 font-size: 1.2rem;
@@ -75,5 +84,80 @@
                 left: 66.8vw;
             }
         }
+    }
+}
+
+.socials {
+    flex-basis: 50%;
+    @include mixins.flex-col_center;
+    margin: 15vh 0 5vh 0;
+    gap: 4vh;
+    width: 80%;
+    padding: 0 4.5vw;
+    border-left: 1px solid black;
+    font-weight: 300;
+    .details {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        align-items: flex-start;
+        gap: 1vh;
+        li {
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: black;
+            @include mixins.row_justify_center;
+            gap: 0.3vw;
+            transition: transform 0.3s ease-in-out;
+            &:hover {
+                transform: translateX(0.5vw);
+            }
+            .instagram {
+                color: #833ab4;
+            }
+            .tiktok {
+                color: #000000;
+            }
+            .facebook {
+                color: #1877f2;
+            }
+        }
+    }
+    .email-us {
+        @include mixins.flex-col_center;
+        gap: 1vh;
+        a {
+            text-decoration: none;
+            color: black;
+            transition: text-decoration 0.3s ease-in-out, transform 0.3s ease-in-out;
+            &:hover {
+                transform: translateX(0.5vw);
+                text-decoration: underline;
+            }
+            &:visited {
+                color: #833ab4;
+            }
+        }
+    }
+    h2 {
+        font-size: 2rem;
+        font-weight: 400;
+        text-align: center;
+        margin: 0 auto;
+        padding: 10vh 0 5vh 0;
+    }
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    p {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    a {
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: black;
     }
 }
