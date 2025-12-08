@@ -33,6 +33,8 @@ export class Cart {
     } else {
       this.cart.set([...current, { ...product, count: 1 }]); // and if the item doesnt match id, it simply creates a new array that spreads the current array and adds the item as a new card/product
     }
+    console.log(this.cart());
+    console.log('Added to Cart');
   }
 
   incHandler = (productId: number) => {
@@ -47,6 +49,8 @@ export class Cart {
       };
       this.cart.set(updated);
     }
+    console.log(this.cart());
+    console.log('Incremented');
   }
 
   decHandler = (productId: number) => {
@@ -64,11 +68,15 @@ export class Cart {
       }
       this.cart.set(updated);
     }
+    console.log(this.cart());
+    console.log('Decremented');
   }
 
   delHandler = (productId: number) => {
     const current = this.cart();
     const updated = current.filter(p => p.id !== productId)
     this.cart.set(updated);
+    console.log(this.cart());
+    console.log('Deleted');
   }
 }
