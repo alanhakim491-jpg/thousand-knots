@@ -30,9 +30,9 @@ import { ShovableBtn } from '../../buttons/shovable-btn/shovable-btn';
         }
       </div>
       <div class="the-image">
-        <img [src]="product().imageURL" class="mb-2"/>
+        <img [src]="product().imageURL" class="mb-2" routerLink="/item/:id" />
         @if (size === 'four-size') {
-          <div class="desc-over">
+          <div class="desc-over" routerLink="/item/:id">
             <p>{{ product().description }}</p>
           </div>
         }
