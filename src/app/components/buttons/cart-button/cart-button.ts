@@ -84,6 +84,15 @@ import { NgClass } from '@angular/common';
       border-radius: 5px;
       padding: 0.6rem 0.7rem;
     }
+
+    button.item {
+      width: 100%;
+      padding: 0.6rem 7.85rem;
+      transition: 0.3s ease;
+      &:hover {
+        scale: 1.05;
+      }
+    }
   `,
 })
 export class CartButton {
@@ -94,7 +103,7 @@ export class CartButton {
   label = input('');
   btnClicked = output();
 
-  @Input() width: 'catalog' | 'summary' = 'catalog';
+  @Input() width: 'catalog' | 'summary' | 'item' = 'catalog';
 
   onContainerMouseLeave() {
     if (this.width === 'catalog') {
