@@ -24,6 +24,10 @@
 .catalog-card.four-size {
     height: 53vh;
     width: 22vw;
+    @media screen and (min-width: 1600px) {
+        height: 60vh;
+        width: 23vw;
+    }
     .the-top {
         @include mixins.justify_between;
         position: relative;
@@ -33,6 +37,10 @@
             top: 0.2vh;
             mat-icon {
                 font-size: 1.1rem;
+            }
+            @media screen and (min-width: 1600px) {
+                left: 22.3vw;
+                top: 0.1vh;
             }
         }
     }
@@ -51,6 +59,15 @@
     .the-image {
         height: auto;
         width: 100%;
+        position: relative;
+        @media screen and (min-width: 1600px) {
+            height: 68.5vh;
+        }
+        img {
+            @media screen and (min-width: 1600px) {
+                height: 68vh;
+            }
+        }
         .desc-over {
             position: absolute;
             top: 0;
