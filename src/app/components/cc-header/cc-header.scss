@@ -17,4 +17,7 @@ h1.center {
 h1.left {
     text-align: left;
     margin: 5vh 0 2vh 6.3vw;
+    @media screen and (min-width: 1600px) {
+        margin: 5vh 0 2vh 8.3vw;
+    }
 }
