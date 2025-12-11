@@ -10,10 +10,7 @@ export const routes: Routes = [
         pathMatch: 'full',
         component: Home,
     },
-    {
-        path: 'catalog',
-        component: CatalogPage,
-    },
+    { path: 'catalog', component: CatalogPage, },
     {
         path: 'profile/login',
         loadComponent: () => { return import('./pages/login/login').then((m) => m.Login) },
@@ -26,11 +23,6 @@ export const routes: Routes = [
         path: 'contact',
         loadComponent: () => { return import('./pages/contact/contact').then((m) => m.Contact) },
     },
-    {
-        path: 'cart',
-        component: CartPage,
-    },{
-        path: 'item/:id',
-        component: ItemPage,
-    }
+    { path: 'cart', component: CartPage, },
+    { path: 'item/:id', component: ItemPage, }
 ];
