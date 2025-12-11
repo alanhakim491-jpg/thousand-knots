@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
   `,
   styles: `
     p {
+      display: block;
       text-align: center;
       font-size: 0.8rem;
       font-weight: 300;
