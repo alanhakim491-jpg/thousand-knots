@@ -22,4 +22,30 @@ export class Item {
       count: 0,
     },
   )
+
+  updateItem = (item: Catalogs) => {
+    const current = this.itemSignal();
+    const updated = { ...current, ...item, count: current.count + 1 };
+    this.itemSignal.set(updated);
+    console.log(this.itemSignal());
+    console.log('Updated');
+  }
+
+  decrementItem = () => {
+    const current = this.itemSignal();
+    if (current.count <= 0) {
+      return; // guard: prevent count from going below zero
+    }
+    const updated = { ...current, count: current.count - 1 };
+    this.itemSignal.set(updated);
+    console.log(this.itemSignal());
+    console.log('Decremented');
+  }
+  incrementItem = () => {
+    const current = this.itemSignal();
+    const updated = { ...current, count: current.count + 1 };
+    this.itemSignal.set(updated);
+    console.log(this.itemSignal());
+    console.log('Incremented');
+  }
 }
