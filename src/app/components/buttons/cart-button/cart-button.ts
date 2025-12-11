@@ -39,7 +39,7 @@ import { NgClass } from '@angular/common';
     .sizes {
       display: none;
       gap: 0.5vw;
-      background-color: #f5f5f4;
+      background-color: #ffffff;
       padding: 0.4rem;
       justify-content: center;
       flex-direction: row;
