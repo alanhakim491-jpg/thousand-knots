@@ -90,7 +90,7 @@ app-login-form {
 .socials {
     flex-basis: 50%;
     @include mixins.flex-col_center;
-    margin: 15vh 0 5vh 0;
+    margin: 17vh 0 5vh 0;
     gap: 4vh;
     width: 80%;
     padding: 0 4.5vw;
@@ -110,6 +110,7 @@ app-login-form {
             @include mixins.row_justify_center;
             gap: 0.3vw;
             transition: transform 0.3s ease-in-out;
+            cursor: pointer;
             &:hover {
                 transform: translateX(0.5vw);
             }
