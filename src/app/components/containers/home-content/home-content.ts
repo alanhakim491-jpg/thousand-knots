@@ -1,35 +1,68 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
+
+interface HeroSlide {
+  image: string;
+  category: string;
+  title?: string;
+  subtitle?: string;
+  link: string;
+}
 
 @Component({
   selector: 'app-home-content',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   animations: [
     trigger('fadeAnimation', [
       transition('* <=> *', [
         style({ opacity: 0 }),
-        animate('500ms ease-in-out', style({ opacity: 1 }))
+        animate('600ms ease-in-out', style({ opacity: 1 }))
       ])
     ])
   ],
   template: `
-    <div class="display">
-      <div class="img-wrap">
+    <div 
+      class="hero-carousel"
+      (mouseenter)="pauseAutoPlay()"
+      (mouseleave)="resumeAutoPlay()"
+    >
+      <div class="carousel-container">
         <button
           class="arrow arrow--prev"
           type="button"
           aria-label="Previous image"
           (click)="prevImage()"
         >
-          🡐
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
         </button>
 
-        <img
-          [src]="currentImage"
-          [alt]="'Home banner ' + (currentIndex + 1)"
-          [@fadeAnimation]="currentIndex"
-        />
+        <div class="slide-wrapper">
+          <div class="slide-content" [@fadeAnimation]="currentIndex">
+            <img
+              [src]="currentSlide.image"
+              [alt]="currentSlide.category"
+              class="hero-image"
+            />
+            <div class="slide-overlay">
+              <div class="overlay-content">
+                <p class="category-label">{{ currentSlide.category }}</p>
+                @if (currentSlide.title) {
+                  <h2 class="slide-title">{{ currentSlide.title }}</h2>
+                }
+                @if (currentSlide.subtitle) {
+                  <p class="slide-subtitle">{{ currentSlide.subtitle }}</p>
+                }
+                <a [routerLink]="currentSlide.link" class="view-all-btn">
+                  VIEW ALL
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <button
           class="arrow arrow--next"
@@ -37,53 +70,101 @@ import { trigger, transition, style, animate } from '@angular/animations';
           aria-label="Next image"
           (click)="nextImage()"
         >
-          🡒
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
         </button>
-      </div>
-      <div class="page-indicators">
-        <div
-          *ngFor="let image of images; let i = index"
-          class="indicator-bar"
-          [class.active]="i === currentIndex"
-          (click)="goToImage(i)"
-          [attr.aria-label]="'Go to image ' + (i + 1)"
-        ></div>
+        
+        <div class="page-indicators">
+          @for (slide of slides; track $index) {
+            <button
+              class="indicator-dot"
+              [class.active]="$index === currentIndex"
+              (click)="goToImage($index)"
+              [attr.aria-label]="'Go to slide ' + ($index + 1)"
+              type="button"
+            ></button>
+          }
+        </div>
       </div>
     </div>
   `,
   styleUrls: ['./home-content.scss'],
 })
-export class HomeContent {
-  images = [
-    '/assets/background.png',
-    '/assets/background.png',
-    '/assets/background.png',
+export class HomeContent implements OnInit, OnDestroy {
+  slides: HeroSlide[] = [
+    {
+      image: '/assets/background.png',
+      category: 'NEW IN',
+      link: '/catalog'
+    },
+    {
+      image: '/assets/background.png',
+      category: 'COLLECTION',
+      title: 'Discover Your Style',
+      link: '/catalog'
+    },
+    {
+      image: '/assets/background.png',
+      category: 'TRENDING NOW',
+      subtitle: 'Shop the latest trends',
+      link: '/catalog'
+    },
   ];
 
   currentIndex = 0;
+  private autoPlayInterval: any;
+  private readonly AUTO_PLAY_DELAY = 5000; // 5 seconds
 
-  get currentImage(): string {
-    return this.images[this.currentIndex];
+  get currentSlide(): HeroSlide {
+    return this.slides[this.currentIndex];
   }
 
-  get isFullscreen(): boolean {
-    return this.currentIndex === 1;
+  ngOnInit(): void {
+    this.startAutoPlay();
   }
 
-  get isSecondImage(): boolean {
-    return this.currentIndex === 1;
+  ngOnDestroy(): void {
+    this.stopAutoPlay();
   }
 
   nextImage(): void {
-    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    this.currentIndex = (this.currentIndex + 1) % this.slides.length;
   }
 
   prevImage(): void {
     this.currentIndex =
-      (this.currentIndex - 1 + this.images.length) % this.images.length;
+      (this.currentIndex - 1 + this.slides.length) % this.slides.length;
   }
 
   goToImage(index: number): void {
     this.currentIndex = index;
+    this.restartAutoPlay();
+  }
+
+  startAutoPlay(): void {
+    this.autoPlayInterval = setInterval(() => {
+      this.nextImage();
+    }, this.AUTO_PLAY_DELAY);
+  }
+
+  stopAutoPlay(): void {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+      this.autoPlayInterval = null;
+    }
+  }
+
+  pauseAutoPlay(): void {
+    this.stopAutoPlay();
+  }
+
+  resumeAutoPlay(): void {
+    this.startAutoPlay();
+  }
+
+  restartAutoPlay(): void {
+    this.stopAutoPlay();
+    this.startAutoPlay();
   }
 }
