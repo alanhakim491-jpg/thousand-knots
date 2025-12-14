@@ -28,9 +28,9 @@ import { Footer } from '../../components/footer/footer';
       <div class="socials">
         <h2>Find Us On</h2>
         <ul class="details">
-          <li><ng-icon name="simpleInstagram" class="instagram"></ng-icon>@thousandknotss</li>
-          <li><ng-icon name="simpleTiktok" class="tiktok"></ng-icon>Thousandknots</li>
-          <li><ng-icon name="simpleFacebook" class="facebook"></ng-icon>thousandknotss</li>
+          <li><ng-icon name="simpleInstagram" class="instagram"></ng-icon><a href="https://www.instagram.com/thousandknotss?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">@thousandknotss</a></li>
+          <li><ng-icon name="simpleTiktok" class="tiktok"></ng-icon><a href="https://www.tiktok.com/@thousandknotss?is_from_webapp=1&sender_device=pc" target="_blank">Thousandknots</a></li>
+          <li><ng-icon name="simpleFacebook" class="facebook"></ng-icon><a href="https://www.facebook.com/thousandknotss" target="_blank">thousandknotss</a></li>
         </ul>
         <h3>Or</h3>
         <div class="email-us">
