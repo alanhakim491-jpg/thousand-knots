@@ -1,0 +1,139 @@
+@use '../../styles/mixins.scss';
+
+.the-item {
+    font-family: 'Roboto Condensed', sans-serif;
+    @include mixins.flex-col_center;
+    gap: 5vh;
+    padding: 2vh 0 5vh 0;
+    margin: 5vh 8vw 0 8vw;
+    overflow-x: hidden;
+    max-width: 100%;
+    .the-images {
+        position: relative;
+        width: 100%;
+        max-width: 70%;
+        margin: 0 auto;
+        padding: 2vw 0;
+        
+        .carousel-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+            padding: 0;
+            border-radius: 0;
+            
+            &::-webkit-scrollbar {
+                height: 8px;
+            }
+            
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 4px;
+            }
+            
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        }
+        
+        .carousel-track {
+            display: flex;
+            gap: 1vw;
+            padding: 1vw 50px;
+            
+            img {
+                flex-shrink: 0;
+                width: 350px;
+                height: 460px;
+                object-fit: cover;
+                cursor: pointer;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+    .the-left {
+        @include mixins.flex-col_center;
+        gap: 4vh;
+    }
+    .the-important {
+        width: 100%;
+        max-width: 70%;
+        margin: 0 auto;
+        padding: 0 3.5vw;
+        box-sizing: border-box;
+        @include mixins.justify-between;
+        gap: 15vw;
+        .the-title {
+            @include mixins.flex-col_center;
+            gap: 2vw;
+            h2 {
+                align-self: flex-start;
+                font-size: 1.2rem;
+                font-weight: 400;
+            }
+            .title-and-sku {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-self: flex-start;
+                gap: 1vh;
+                h1 {
+                    align-self: flex-start;
+                    font-size: 2rem;
+                    font-weight: 500;
+                }
+            }
+        }
+        .details {
+            @include mixins.flex-col_center;
+            gap: 0.5vw;
+            .above-cart {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 13vw;
+                h3 {
+                    font-size: 1.2rem;
+                }
+                .cart-stuff {
+                    @include mixins.flex-col_center;
+                    gap: 0.5vw;
+                    .count {
+                        @include mixins.row-align_center;
+                        gap: 0.5vw;
+                        mat-icon {
+                            margin-top: 0.2rem;
+                        }
+                        h2 {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .the-descriptors {
+        width: 100%;
+        max-width: 70%;
+        margin: 5vh auto;
+        margin-left: 20.5vw;
+        padding: 0 4vw;
+        text-align: center;
+        @include mixins.row-align_center;
+        gap: 10vw;
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+        }   
+    }
+}
