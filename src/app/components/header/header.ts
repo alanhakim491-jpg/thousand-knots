@@ -1,18 +1,19 @@
-import { Component, signal, computed, ViewChild, ElementRef, HostListener, inject } from '@angular/core';
+import { Component, signal, computed, ViewChild, ElementRef, HostListener, inject, Input } from '@angular/core';
 import { RouterLink, Router, NavigationEnd } from "@angular/router";
 import { MatIconModule } from '@angular/material/icon';
-import { filter } from 'rxjs/operators';
+import { CommonModule } from '@angular/common';
+import { filter, map } from 'rxjs/operators';
 import { PrimaryButton } from "../buttons/primary-button/primary-button";
 import { ShovableBtn } from '../buttons/shovable-btn/shovable-btn';
 
 @Component({
   selector: 'app-header',
-  imports: [PrimaryButton, ShovableBtn, MatIconModule, RouterLink],
+  imports: [PrimaryButton, ShovableBtn, MatIconModule, RouterLink, CommonModule],
   template: `
-    <div id="header" class="bg-[#f5f5f4] rounded-lg flex flex-row items-center justify-between">
+    <div id="header" [ngClass]="{'header-not-fixed': isHomePage() || headerClass}" class="bg-[#f5f5f4] flex flex-row items-center justify-between">
       <div class="left">
         <app-shovable-btn (btnClick)="menuHandler()" where="header">
-          <mat-icon id="menu-btn">{{ menuIcon() }}</mat-icon>
+          <mat-icon id="menu-btn">menu</mat-icon>
         </app-shovable-btn>
         <img routerLink='/' src="../../assets/tk-logo-removebg-preview.png" alt="TK-Logo"/> 
       </div>
@@ -47,18 +48,31 @@ export class Header {
 
   router = inject(Router);
 
+  @Input() headerClass: string | boolean = false;
+
   @ViewChild('menuRef') menuRef!: ElementRef<HTMLUListElement>
 
   menuOpen = signal(false);
-  menuIcon = computed(() => this.menuOpen() ? 'close' : 'menu')
+  isHomePage = signal(false);
 
   constructor() {
+    // Check initial route
+    this.checkIfHomePage();
+
     this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
+      .pipe(
+        filter(event => event instanceof NavigationEnd),
+        map(() => this.router.url)
+      )
       .subscribe(() => {
         this.menuOpen.set(false);
         document.body.classList.remove('no-scroll');
+        this.checkIfHomePage();
       })
+  }
+
+  private checkIfHomePage(): void {
+    this.isHomePage.set(this.router.url === '/' || this.router.url === '/home');
   }
 
   menuHandler() {
