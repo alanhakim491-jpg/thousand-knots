@@ -1,7 +1,6 @@
 @mixin neumorphism-inset {
     background: #f0f0f0; /* Light gray or your base color */
     box-shadow: inset 3px 3px 12px #bebebe, inset -3px -3px 12px #ffffff;
-    transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
 @mixin neumorphism {
