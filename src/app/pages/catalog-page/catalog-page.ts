@@ -5,6 +5,7 @@ import { CcContent } from 'src/app/components/containers/cc-content/cc-content';
 import { Catalog } from '../../services/catalog';
 import { MatIconModule } from '@angular/material/icon';
 import { Footer } from '../../components/footer/footer';
+
 @Component({
   selector: 'app-catalog-page',
   imports: [CatalogCard, CcHeader, CcContent, MatIconModule, Footer],
@@ -15,7 +16,9 @@ import { Footer } from '../../components/footer/footer';
         <li (click)="setCategory('all')" [class.active]="catalogService.selectedCategory() === 'all'">View All</li>
         <li (click)="setCategory('pajamas')" [class.active]="catalogService.selectedCategory() === 'pajamas'">Pajamas</li>
         <li (click)="setCategory('slippers')" [class.active]="catalogService.selectedCategory() === 'slippers'">Slippers</li>
+        <li (click)="setCategory('sports wear')" [class.active]="catalogService.selectedCategory() === 'sports wear'">Sports Wear</li>
         <li (click)="setCategory('shirt dresses')" [class.active]="catalogService.selectedCategory() === 'shirt dresses'">Shirt Dresses</li>
+        <li (click)="setCategory('lounge wear')" [class.active]="catalogService.selectedCategory() === 'lounge wear'">Lounge Wear</li>
       </ul>
       <ul class="view">
         <li id="title">View<li>
