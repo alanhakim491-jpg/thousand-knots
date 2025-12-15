@@ -19,7 +19,6 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [CartButton, ShovableBtn, MatIconModule],
   template: `
     <div class="the-item">
-      <img />
       <div class="the-details">
         <div class="the-images">
           <div class="carousel-wrapper" #carouselWrapper>
@@ -88,7 +87,9 @@ export class ItemPage implements AfterViewInit, OnInit, OnDestroy {
       item.imageURL,
       item.imageURL,
       item.imageURL,
-      item.imageURL
+      item.imageURL,
+      item.imageURL,
+      item.imageURL,
     ];
   });
 
