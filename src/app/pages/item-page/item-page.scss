@@ -4,7 +4,7 @@
     font-family: 'Roboto Condensed', sans-serif;
     @include mixins.flex-col_center;
     gap: 5vh;
-    padding: 2vh 0 5vh 0;
+    padding: 3vh 0 5vh 0;
     margin: 5vh 8vw 0 8vw;
     overflow-x: hidden;
     max-width: 100%;
@@ -13,7 +13,7 @@
         width: 100%;
         max-width: 70%;
         margin: 0 auto;
-        padding: 2vw 0;
+        padding: 8vh 53vw 2vh 53vw;
         
         .carousel-wrapper {
             width: 100%;
@@ -66,8 +66,8 @@
     .the-important {
         width: 100%;
         max-width: 70%;
-        margin: 0 auto;
-        padding: 0 3.5vw;
+        margin: 1vh auto;
+        padding: 0 56.5vw;
         box-sizing: border-box;
         @include mixins.justify-between;
         gap: 15vw;
@@ -125,10 +125,12 @@
     .the-descriptors {
         width: 100%;
         max-width: 70%;
-        margin: 5vh auto;
+        margin: 3vh auto;
         margin-left: 20.5vw;
-        padding: 0 4vw;
+        padding: 0 80vw;
         text-align: center;
+        background-color: oklch(96.7% 0.003 264.542);
+        border-radius: 5px;
         @include mixins.row-align_center;
         gap: 10vw;
         h2 {
