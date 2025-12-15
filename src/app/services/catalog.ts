@@ -31,51 +31,51 @@ export class Catalog {
       description: 'Short sleeves with matching shorts dandelion patterned msulin cotton pj set',
       imageURL: 'https://thethousandknot.com/cdn/shop/files/46b0439f-d25a-4e7a-8c46-5d3174ae7d98.jpg?v=1744407861&width=360',
       sku: 10,
-      category: 'slippers'
-    },    
+      category: 'pajamas'
+    },
     {
       id: 4,
-      title: 'Heartland PJ Set',
-      price: 48,
-      description: 'Long sleeves with matching pants natural cotton pjs',
-      imageURL: 'https://thethousandknot.com/cdn/shop/files/IMG_8602_5d16fc15-bd39-474d-91c2-e39c6bb22156.jpg?v=1758787787&width=360',
-      sku: 15,
-      category: 'slippers'
+      title: 'Baby Blue Lounge Set',
+      price: 40,
+      description: 'Matching lounge set with baby blue top and pants',
+      imageURL: 'https://thethousandknot.com/cdn/shop/files/fabf09d1-f04a-420f-a645-e1dd7392eb56_96f290cc-116e-4c3c-a5f8-e7d1b8da5cef.jpg?v=1762347649&width=360',
+      sku: 8,
+      category: 'lounge wear'
     },
     {
       id: 5,
-      title: 'Heartland PJ Set',
-      price: 48,
-      description: 'Long sleeves with matching pants natural cotton pjs',
-      imageURL: 'https://thethousandknot.com/cdn/shop/files/IMG_8602_5d16fc15-bd39-474d-91c2-e39c6bb22156.jpg?v=1758787787&width=360',
-      sku: 15,
-      category: 'slippers'
+      title: 'Beige Breeze Lounge Robe',
+      price: 35,
+      description: 'Beige full-length cotton robe, featuring an open-front design, wide flowy sleeves, and soft ruffled edges',
+      imageURL: 'https://thethousandknot.com/cdn/shop/files/8c05e0f1-3c93-49b5-b05f-c0b595802703.jpg?v=1746993086&width=360',
+      sku: 12,
+      category: 'lounge wear'
     },
     {
       id: 6,
-      title: 'Heartland PJ Set',
-      price: 48,
-      description: 'Long sleeves with matching pants natural cotton pjs',
-      imageURL: 'https://thethousandknot.com/cdn/shop/files/IMG_8602_5d16fc15-bd39-474d-91c2-e39c6bb22156.jpg?v=1758787787&width=360',
-      sku: 15,
-      category: 'shirt dresses'
+      title: 'Grey Ruffle Sandals',
+      price: 40,
+      description: 'Grey hand knitted ruffle sandals ( organic cotton ) totally handmade',
+      imageURL: 'https://thethousandknot.com/cdn/shop/products/A50681FB-1EFF-4EBE-B813-96C81E30DC03.jpg?v=1660475663&width=360',
+      sku: 9,
+      category: 'slippers'
     },
     {
       id: 7,
-      title: 'Heartland PJ Set',
-      price: 48,
-      description: 'Long sleeves with matching pants natural cotton pjs',
-      imageURL: 'https://thethousandknot.com/cdn/shop/files/IMG_8602_5d16fc15-bd39-474d-91c2-e39c6bb22156.jpg?v=1758787787&width=360',
-      sku: 15,
+      title: 'Plain Grey Shirt Dress',
+      price: 35,
+      description: 'Plain grey with pink pipping silk cotton shirt dress',
+      imageURL: 'https://thethousandknot.com/cdn/shop/products/BF19577D-D0E7-4AA5-A2C3-481F5E0126EE.jpg?v=1661120363&width=360',
+      sku: 6,
       category: 'shirt dresses'
     },
     {
       id: 8,
-      title: 'Heartland PJ Set',
-      price: 48,
-      description: 'Long sleeves with matching pants natural cotton pjs',
-      imageURL: 'https://thethousandknot.com/cdn/shop/files/IMG_8602_5d16fc15-bd39-474d-91c2-e39c6bb22156.jpg?v=1758787787&width=360',
-      sku: 15,
+      title: 'Red Striped Shirt Dress',
+      price: 35,
+      description: 'Red striped above the knee silk cotton shirt dress',
+      imageURL: 'https://thethousandknot.com/cdn/shop/products/WhatsAppImage2022-05-29at10.48.09AM_1.jpg?v=1654294803&width=360',
+      sku: 11,
       category: 'shirt dresses'
     },
     {
