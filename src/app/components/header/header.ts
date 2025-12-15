@@ -33,7 +33,7 @@ import { ShovableBtn } from '../buttons/shovable-btn/shovable-btn';
               <mat-icon>bookmark</mat-icon>
             </app-shovable-btn>
             <app-shovable-btn routerLink="/cart">
-              <mat-icon>shopping_cart</mat-icon>
+              <mat-icon>shopping_basket</mat-icon>
             </app-shovable-btn>
             <app-shovable-btn routerLink="/profile/login">
               <mat-icon>person</mat-icon>
