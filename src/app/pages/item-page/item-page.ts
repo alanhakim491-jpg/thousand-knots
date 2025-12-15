@@ -1,4 +1,13 @@
-import { Component, inject, computed, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+/**
+ * CHANGES MADE FOR REACTIVE ROUTING:
+ * - Replaced effect() approach with RxJS subscription pattern for better performance
+ * - Added distinctUntilChanged() to prevent unnecessary re-fetches when route param doesn't change
+ * - Added proper subscription cleanup in ngOnDestroy to prevent memory leaks
+ */
+import { Component, inject, computed, ElementRef, ViewChild, AfterViewInit, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { map, distinctUntilChanged } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 import { Item } from '../../services/item';
 import { Cart } from 'src/app/services/cart';
 import { CartButton } from 'src/app/components/buttons/cart-button/cart-button';
@@ -59,13 +68,19 @@ import { MatIconModule } from '@angular/material/icon';
   `,
   styleUrls: ['./item-page.scss'],
 })
-export class ItemPage implements AfterViewInit {
+export class ItemPage implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild('carouselWrapper') carouselWrapper!: ElementRef<HTMLDivElement>;
 
   itemService = inject(Item);
   cartService = inject(Cart);
-  theItem = this.itemService.itemSignal;
+  private route = inject(ActivatedRoute);
   
+  // CHANGE: Added subscription property to track and clean up route parameter subscription
+  // This prevents memory leaks when component is destroyed
+  private subscription?: Subscription;
+  
+  // Reference to the item signal from the service - displays current item data
+  theItem = this.itemService.itemSignal;
   images = computed(() => {
     const item = this.theItem();
     return [
@@ -76,6 +91,43 @@ export class ItemPage implements AfterViewInit {
       item.imageURL
     ];
   });
+
+  ngOnInit() {
+    /**
+     * CHANGE: Reactive routing implementation
+     * 
+     * Previously: Used effect() in constructor which could cause performance issues
+     * Now: Using RxJS subscription pattern for better control and performance
+     * 
+     * What this does:
+     * 1. Subscribes to route parameter changes (the :id in /item/:id)
+     * 2. Extracts the 'id' parameter from the route
+     * 3. distinctUntilChanged() ensures we only fetch when ID actually changes
+     *    (prevents duplicate fetches if component re-initializes with same ID)
+     * 4. Calls fetchAndLoadItem() to load the corresponding catalog item
+     */
+    this.subscription = this.route.paramMap.pipe(
+      map(params => params.get('id')), // Extract the 'id' parameter from route
+      distinctUntilChanged() // Performance optimization: only emit when ID actually changes
+    ).subscribe(id => {
+      if (id) {
+        // Fetch and load the item from catalog based on the route ID
+        this.itemService.fetchAndLoadItem(id);
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    /**
+     * CHANGE: Cleanup subscription to prevent memory leaks
+     * 
+     * Why: Without unsubscribing, the subscription continues to exist even after
+     * the component is destroyed, causing memory leaks and potential errors
+     */
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 
   ngAfterViewInit() {
     // Ensure carousel is properly initialized
