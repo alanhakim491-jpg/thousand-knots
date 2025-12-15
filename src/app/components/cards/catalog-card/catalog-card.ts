@@ -30,16 +30,20 @@ import { ShovableBtn } from '../../buttons/shovable-btn/shovable-btn';
         }
       </div>
       <div class="the-image">
-        <img [src]="product().imageURL" class="mb-2" routerLink="/item/:id" />
+        <!-- CHANGE: Fixed routerLink to use actual product ID instead of literal ":id" string -->
+        <!-- Before: routerLink="/item/:id" (wouldn't work - literal string) -->
+        <!-- Now: [routerLink]="['/item', product().id]" (uses actual product ID like /item/1, /item/2, etc.) -->
+        <img [src]="product().imageURL" class="mb-2" [routerLink]="['/item', product().id]" />
         @if (size === 'four-size') {
-          <div class="desc-over" routerLink="/item/:id">
+          <div class="desc-over" [routerLink]="['/item', product().id]">
             <p>{{ product().description }}</p>
           </div>
         }
       </div>
       <div class="props flex flex-col gap-1">
         <div class="the-bottom flex flex-row justify-between items-center">
-          <h2 routerLink="/item/:id">{{ product().title }}</h2>
+          <!-- CHANGE: Title now also links to item page with actual product ID -->
+          <h2 [routerLink]="['/item', product().id]">{{ product().title }}</h2>
           @if (size === 'four-size' || size === 'two-size') {
             <p>{{ '$' + product().price  }}</p>
           }
