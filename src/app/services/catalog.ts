@@ -80,21 +80,21 @@ export class Catalog {
     },
     {
       id: 9,
-      title: 'Heartland PJ Set',
-      price: 48,
-      description: 'Long sleeves with matching pants natural cotton pjs',
-      imageURL: 'https://thethousandknot.com/cdn/shop/files/IMG_8602_5d16fc15-bd39-474d-91c2-e39c6bb22156.jpg?v=1758787787&width=360',
-      sku: 15,
-      category: 'pajamas'
+      title: 'Navy Blue Sports Set',
+      price: 45,
+      description: 'Navy blue micro fleece long sleeve shirt with high rise matching stirrup leggings',
+      imageURL: 'https://thethousandknot.com/cdn/shop/products/C89E371F-F1EB-43B2-B870-5018550C708D.jpg?v=1670948658&width=360',
+      sku: 14,
+      category: 'sports wear'
     },
     {
       id: 10,
-      title: 'Heartland PJ Set',
-      price: 48,
-      description: 'Long sleeves with matching pants natural cotton pjs',
-      imageURL: 'https://thethousandknot.com/cdn/shop/files/IMG_8602_5d16fc15-bd39-474d-91c2-e39c6bb22156.jpg?v=1758787787&width=360',
-      sku: 15,
-      category: 'pajamas'
+      title: 'Nude Bow Sandals',
+      price: 40,
+      description: 'Hand knitted organic cotton yarn &jute sandals ( totally handmade)',
+      imageURL: 'https://thethousandknot.com/cdn/shop/products/B18F985B-7A03-486D-A50A-396F735A709C.jpg?v=1660226940&width=360',
+      sku: 8,
+      category: 'slippers'
     },
   ])
 
